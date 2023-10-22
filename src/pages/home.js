@@ -30,7 +30,7 @@ const landing = () => {
         Whether its for your hobby or education, simple scoreboards provides you
         with everything you need to get started with sports broadcasting.
       </p>
-      <Link to="/mydashboard">
+      <Link to="/learntobroadcast">
         <button>Learn How To Become a Sports Broadcaster Here</button>
       </Link>
       <h2>Sports with Simple Scoreboard Overlays:</h2>
