@@ -25,6 +25,10 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding-left: 50px;
+  background-image: url("/public/playdrawings.png");
+  background-attachment: scroll;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 h1 {

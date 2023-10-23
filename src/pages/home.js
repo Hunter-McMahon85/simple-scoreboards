@@ -10,7 +10,7 @@ const landing = () => {
           <h1>Simple Scoreboards</h1>
           <form>
             <Link to="/mydashboard">
-              <button>Get Started Today!</button>
+              <button>Log in</button>
             </Link>
           </form>
           <h6>
@@ -19,16 +19,18 @@ const landing = () => {
         </div>
         <div class="right">
           <p>
-            Simple Scoreboards is an innovate tool that allows you, the user to
-            create scoreboards for any sport without the hassle of large
-            subscriptions
+            Every great play has a great call, make your broadcast more proffesional with our free and easy to use overlays today! 
           </p>
+          <Link to="/usingsimplescoreboards">
+              <button>Learn to use Simple Scoreboard Overlays</button>
+            </Link>
         </div>
       </div>
       <h1 class="about">About</h1>
       <p>
         Whether its for your hobby or education, simple scoreboards provides you
-        with everything you need to get started with sports broadcasting.
+        with everything you need to get started with sports broadcasting. We offer 
+        both tools and educational resources on how to create your own sports broadcast!
       </p>
       <Link to="/learntobroadcast">
         <button>Learn How To Become a Sports Broadcaster Here</button>
