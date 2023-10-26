@@ -1,29 +1,32 @@
-import logo from "../logo.svg";
-import React from "react";
-import { Button, Heading, Image, View, Card } from "@aws-amplify/ui-react";
-import { Auth } from 'aws-amplify'
+import React, { useState, useEffect} from "react";
 
-async function signOut() {
-    try {
-      await Auth.signOut();
-    } catch (error) {
-      console.log('error signing out: ', error);
-    }
-}
+const Scoreboard = () => {
+  // Initialize scores with 0
+  const [H_score, setScoreH] = useState(0);
+  const [V_score, setScoreV] = useState(0);
 
-// this page will be the actual scoreboard overlay
-// we will offer several scoreboard layouts in the template editor and user customization 
-// choices will be saved to a file that will be imported here
-const scoreboard = () => {
+  // Function to update the scores from localStorage
+  const reload = () => {
+    setScoreH(localStorage.getItem("H_score"));
+    setScoreV(localStorage.getItem("V_score"));
+  };
+  useEffect(() => {
+    // Call reload initially and then every 1000 milliseconds (1 second)
+    reload();
+    const interval = setInterval(reload, 1);
+
+    // Clear the interval when the component unmounts
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
-    <View className="App">
-      <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
-        <Heading level={1}>this is the scoreboard overlay</Heading>
-      </Card>
-      <Button onClick={signOut}>Sign Out</Button>
-    </View>
+    <>
+      <h1>Visitor Score: {V_score}</h1>
+      <h1>Home Score: {H_score}</h1>
+    </>
   );
 };
 
-export default scoreboard;
+export default Scoreboard;

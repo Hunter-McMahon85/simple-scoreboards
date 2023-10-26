@@ -19,11 +19,31 @@ function App() {
       <Routes>
         <Route exact path="/" Component={landing}></Route>
         <Route exact path="/learntobroadcast" Component={setupguide}></Route>
-        <Route exact path="/usingsimplescoreboards" Component={documentation}></Route>
-        <Route exact path="/mydashboard" Component={withAuthenticator(dashboard)}></Route>
-        <Route exact path="/overlaycreator" Component={withAuthenticator(configEditor)}></Route>
-        <Route exact path="/myscorekeeper" Component={withAuthenticator(scorekeeper)}></Route>
-        <Route exact path="/myscoreboard" Component={withAuthenticator(scoreboard)}></Route>
+        <Route
+          exact
+          path="/usingsimplescoreboards"
+          Component={documentation}
+        ></Route>
+        <Route
+          exact
+          path="/mydashboard"
+          Component={withAuthenticator(dashboard)}
+        ></Route>
+        <Route
+          exact
+          path="/presetcreator"
+          Component={withAuthenticator(configEditor)}
+        ></Route>
+        <Route
+          exact
+          path="/myscorekeeper"
+          Component={withAuthenticator(scorekeeper)}
+        ></Route>
+        <Route
+          exact
+          path="/myscoreboard"
+          Component={withAuthenticator(scoreboard)}
+        ></Route>
       </Routes>
     </Router>
   );

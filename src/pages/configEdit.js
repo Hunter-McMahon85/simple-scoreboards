@@ -1,6 +1,6 @@
-import logo from "../logo.svg";
+
 import React from "react";
-import { Button, Heading, Image, View, Card } from "@aws-amplify/ui-react";
+import { Button, Heading, View, Card } from "@aws-amplify/ui-react";
 import { Auth } from 'aws-amplify'
 
 async function signOut() {
@@ -15,7 +15,7 @@ const configEditor = () => {
   return (
     <View className="App">
       <Card>
-        <Image src={logo} className="App-logo" alt="logo" />
+        
         <Heading level={1}>template editor</Heading>
       </Card>
       <Button onClick={signOut}>Sign Out</Button>
