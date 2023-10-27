@@ -19,6 +19,7 @@ const Scorekeeper = () => {
       localStorage.setItem("V_score", V_score);
     }
   }
+  
   return (
     <>
       <div className="scorekeeper">

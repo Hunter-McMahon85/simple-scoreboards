@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
+import SessionStart from "../page_components/session_config";
 
 async function signOut() {
   try {
@@ -10,7 +11,17 @@ async function signOut() {
   }
 }
 
-const dashboard = () => {
+const Dashboard = () => {
+  const [ShowSessionStart, setShowSessionStart] = useState(false);
+
+  const handleopenSessionStart = () => {
+    setShowSessionStart(true);
+  };
+
+  const handleCloseSessionStart = () => {
+    setShowSessionStart(false);
+  };
+
   return (
     <>
       <div className="dash_body">
@@ -20,12 +31,13 @@ const dashboard = () => {
         <Link to="/presetcreator">
           <button>Create Scoreboard Preset</button>
         </Link>
-        <Link to="/myscorekeeper">
-          <button>Start Scorekeeping Session</button>
-        </Link>
+        
+        <button onClick={handleopenSessionStart}>
+          Start Scorekeeping Session
+        </button>
+        {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
       </div>
     </>
   );
 };
-/**/
-export default dashboard;
+export default Dashboard;
