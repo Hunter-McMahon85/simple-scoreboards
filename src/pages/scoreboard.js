@@ -7,12 +7,14 @@ const Scoreboard = () => {
   const [H_score, setScoreH] = useState(0);
   const [V_score, setScoreV] = useState(0);
   const [Period, setPeriod] = useState(0);
+  const [Time, setTime] = useState(0);
 
   // fetch data from controller
   const reload = () => {
     setScoreH(localStorage.getItem("H_score"));
     setScoreV(localStorage.getItem("V_score"));
     setPeriod(localStorage.getItem("Period"));
+    setTime(localStorage.getItem("Time"));
   };
 
   // repetedly fetch to keep scoreboard updated
@@ -28,7 +30,7 @@ const Scoreboard = () => {
 
   return (
     <>
-      <FBSlim H_score={H_score} V_score={V_score} Period={Period}/>
+      <FBSlim H_score={H_score} V_score={V_score} Period={Period} Time={Time}/>
     </>
   );
 };
