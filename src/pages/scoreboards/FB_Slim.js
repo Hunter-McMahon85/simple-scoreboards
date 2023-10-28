@@ -1,6 +1,6 @@
 import React from "react";
 
-const FBSlim = ({ V_score, H_score, Period, Time }) => {
+const FBSlim = ({ V_score, H_score, Period, Time, Down, Distance }) => {
   return (
     <>
       <img alt="Broadcaster Logo"></img>
@@ -8,7 +8,7 @@ const FBSlim = ({ V_score, H_score, Period, Time }) => {
       <h1>Home Score: {H_score}</h1>
       <h1>Quarter {Period}</h1>
       <h1>{Time}</h1>
-      <h1>down and distance</h1>
+      <h1>{Down} & {Distance}</h1>
     </>
   );
 };

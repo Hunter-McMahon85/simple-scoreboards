@@ -8,6 +8,8 @@ const Scoreboard = () => {
   const [V_score, setScoreV] = useState(0);
   const [Period, setPeriod] = useState(0);
   const [Time, setTime] = useState(0);
+  const [Down, setDown] = useState(0);
+  const [Distance, setDistance] = useState(0);
 
   // fetch data from controller
   const reload = () => {
@@ -15,6 +17,8 @@ const Scoreboard = () => {
     setScoreV(localStorage.getItem("V_score"));
     setPeriod(localStorage.getItem("Period"));
     setTime(localStorage.getItem("Time"));
+    setDown(localStorage.getItem("Down"));
+    setDistance(localStorage.getItem("Distance"));
   };
 
   // repetedly fetch to keep scoreboard updated
@@ -28,9 +32,20 @@ const Scoreboard = () => {
     };
   }, []);
 
+  // TODO: add conditional rendering for different templates
+  // since the following scoreboard templates go over the stream, 
+  // they need to maintain an 1080p window size (to fit the broadcast window) 
+  // for proper output over the broadcast and may not be responsive
   return (
     <>
-      <FBSlim H_score={H_score} V_score={V_score} Period={Period} Time={Time}/>
+      <FBSlim
+        H_score={H_score}
+        V_score={V_score}
+        Period={Period}
+        Time={Time}
+        Down={Down}
+        Distance={Distance}
+      />
     </>
   );
 };

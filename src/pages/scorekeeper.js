@@ -90,6 +90,24 @@ const Scorekeeper = () => {
     clearInterval(t_interval);
   }
 
+  // down and distance
+  let down = "";
+  let distance = "";
+  localStorage.setItem("Down", down);
+  localStorage.setItem("Distance", distance);
+
+  function DefDown(d){
+    down = d;
+    localStorage.setItem("Down", down);
+  }
+  
+  function DefDistance(d){
+    distance = d;
+    localStorage.setItem("Distance", distance);
+  }
+  // in the following, we will have multiple elements like FBScorekeeper
+  // TODO: create more sports templates and setup conditional rendering
+  // based on user input from dashboard
   return (
     <>
       <div className="scorekeeper">
@@ -99,6 +117,8 @@ const Scorekeeper = () => {
           ResetTime={ResetTime}
           DecrementTime={DecrementTime}
           StopDecrement={StopDecrement}
+          DefDistance = {DefDistance}
+          DefDown = {DefDown}
         />
         <p>
           <br></br>
