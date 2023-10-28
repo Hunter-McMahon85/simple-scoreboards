@@ -1,21 +1,26 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+//base template elements
+import FBSlim from "./scoreboards/FB_Slim";
 
 const Scoreboard = () => {
-  // Initialize scores with 0
+  // Initialize data
   const [H_score, setScoreH] = useState(0);
   const [V_score, setScoreV] = useState(0);
+  const [Period, setPeriod] = useState(0);
 
-  // Function to update the scores from localStorage
+  // fetch data from controller
   const reload = () => {
     setScoreH(localStorage.getItem("H_score"));
     setScoreV(localStorage.getItem("V_score"));
+    setPeriod(localStorage.getItem("Period"));
   };
+
+  // repetedly fetch to keep scoreboard updated
   useEffect(() => {
-    // Call reload initially and then every 1000 milliseconds (1 second)
     reload();
     const interval = setInterval(reload, 1);
-
-    // Clear the interval when the component unmounts
+    // this is so if this page is used as a component the setinterval closes
+    //when the component is closed
     return () => {
       clearInterval(interval);
     };
@@ -23,8 +28,7 @@ const Scoreboard = () => {
 
   return (
     <>
-      <h1>Visitor Score: {V_score}</h1>
-      <h1>Home Score: {H_score}</h1>
+      <FBSlim H_score={H_score} V_score={V_score} Period={Period}/>
     </>
   );
 };

@@ -11,6 +11,7 @@ function SessionStart({ onClose }) {
   return (
     <>
       <div>
+        <h1>option to choose session, directly stream it etc.</h1>
         <button onClick={OpenSession}>Create Session</button>
         <button onClick={onClose}>Close Component</button>
       </div>
