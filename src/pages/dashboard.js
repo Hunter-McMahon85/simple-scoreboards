@@ -35,11 +35,11 @@ const Dashboard = () => {
             Sign Out
           </button>
         </Link>
-        
+
         <Link to="/presetcreator">
           <button
           style={{color: 'black', backgroundColor: 'lightblue', padding: '6px 20px', borderRadius: '20px',
-          cursor: 'pointer', display: "block"}}>
+          cursor: 'pointer'}}>
             Create Scoreboard Preset</button>
         </Link>
         
