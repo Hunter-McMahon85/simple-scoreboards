@@ -2,7 +2,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 1080px;
+    min-height: 1080px;
     width: 1920px;
 }
 
