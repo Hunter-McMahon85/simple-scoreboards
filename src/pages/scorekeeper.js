@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // our different score controllers
 import FBScorekeeper from "./score_controllers/FB_controller";
+import SoccerScorekeeper from "./score_controllers/Soccer_Controller";
 
 /*
 Vars and Functions in Scorekeeper:
@@ -16,7 +17,12 @@ Distance - Holds any needed distance values (downs till 1st,)
 Functions:
 U_score(team, n)- +/- n points from given team
 Change_Period()- increments the period
-
+SetTime() - Uses the value of T to update Time and save to local storage
+ResetTime(t, d) - puts t seconds on the clock, d = -1 for decrement, d = 1 for increment
+CountTime(d) - runs the clock d = -1 for decrement, d = 1 for increment
+IncrementTime() - runs the clock counting up (calls count time)
+DecrementTime() - runs the clock counting down (calls count time)
+StopClock() - clears interval to stop the clock
 */
 const Scorekeeper = () => {
   let H_score = 0;
@@ -49,15 +55,15 @@ const Scorekeeper = () => {
 
   // game timers
   let T = 0;
-  let t_interval = null;
+  let T_Max = 0;
+  let T_Interval = null;
   let Time = "00:00";
   localStorage.setItem("Time", Time);
 
-  function SetTime()
-  {
+  function SetTime() {
     let mins = Math.floor(T / 60);
     let secs = T % 60;
-    if (secs > 9){
+    if (secs > 9) {
       Time = mins.toString() + ":" + secs.toString();
     } else {
       Time = mins.toString() + ":0" + secs.toString();
@@ -65,64 +71,103 @@ const Scorekeeper = () => {
     localStorage.setItem("Time", Time);
   }
 
-  function ResetTime(t) {
-    T = t * 60;
+  function ResetTime(t, d) {
+    clearInterval(T_Interval);
+    T_Max = t * 60;
+    if (d === -1) {
+      T = T_Max;
+    } else {
+      T = 0;
+    }
     SetTime();
-    clearInterval(t_interval);
   }
 
-  function CountTime() {
-    SetTime();
-
-    if (T > 0) {
-      T--;
-    } else {
-      clearInterval(t_interval);
+  function CountTime(d) {
+    if (d === -1) {
+      if (T > 0) {
+        T--;
+      } else {
+        clearInterval(T_Interval);
+      }
     }
+    if (d === 1) {
+      if (T < T_Max) {
+        T++;
+      } else {
+        clearInterval(T_Interval);
+      }
+    }
+    SetTime();
+  }
+
+  function IncrementTime() {
+    if(T_Max === 0)
+    {
+      //set a default value in case user doesnt reset time
+      T_Max = 45*60;
+    }
+    clearInterval(T_Interval);
+    T_Interval = setInterval(() => CountTime(1), 1000);
   }
 
   function DecrementTime() {
-    clearInterval(t_interval);
-    t_interval = setInterval(CountTime, 1000);
+    clearInterval(T_Interval);
+    T_Interval = setInterval(() => CountTime(-1), 1000);
   }
 
-  function StopDecrement() {
-    clearInterval(t_interval);
+  function StopClock() {
+    clearInterval(T_Interval);
   }
-
+  
   // down and distance
   let down = "";
   let distance = "";
   localStorage.setItem("Down", down);
   localStorage.setItem("Distance", distance);
 
-  function DefDown(d){
+  function DefDown(d) {
     down = d;
     localStorage.setItem("Down", down);
   }
-  
-  function DefDistance(d){
+
+  function DefDistance(d) {
     distance = d;
     localStorage.setItem("Distance", distance);
   }
   // in the following, we will have multiple elements like FBScorekeeper
   // TODO: create more sports templates and setup conditional rendering
   // based on user input from dashboard
+  const ScoreType = localStorage.getItem("ScoreboardType");
+  let ScoreKeeperComponent;
+  if (ScoreType === "FBSlim") {
+    ScoreKeeperComponent = (
+      <FBScorekeeper
+        U_score={U_score}
+        Change_Period={Change_Period}
+        ResetTime={ResetTime}
+        DecrementTime={DecrementTime}
+        StopClock={StopClock}
+        DefDistance={DefDistance}
+        DefDown={DefDown}
+      />
+    );
+  } else if (ScoreType === "Soccer") {
+    ScoreKeeperComponent = (
+      <SoccerScorekeeper
+        U_score={U_score}
+        Change_Period={Change_Period}
+        ResetTime={ResetTime}
+        IncrementTime={IncrementTime}
+        StopClock={StopClock}
+      />
+    );
+  }
+
   return (
     <>
       <div className="scorekeeper">
-        <FBScorekeeper
-          U_score={U_score}
-          Change_Period={Change_Period}
-          ResetTime={ResetTime}
-          DecrementTime={DecrementTime}
-          StopDecrement={StopDecrement}
-          DefDistance = {DefDistance}
-          DefDown = {DefDown}
-        />
-        <p>
-          <br></br>
-        </p>
+        <div>{ScoreKeeperComponent}</div>
+
         <Link to="/myscoreboard">
           <button>go to scoreboard</button>
         </Link>

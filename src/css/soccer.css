@@ -1,0 +1,20 @@
+.FB_Slim_Container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 1080px;
+    width: 1920px;
+}
+
+.FB_Slim_items{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: 5px solid black;
+    width: 100%;
+    background-color: beige;
+}
+
+h1 {
+    margin: 0% 2% 0% 2%;
+}

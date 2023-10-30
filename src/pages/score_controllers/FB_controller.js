@@ -5,7 +5,7 @@ const FBScorekeeper = ({
   Change_Period,
   ResetTime,
   DecrementTime,
-  StopDecrement,
+  StopClock,
   DefDown,
   DefDistance,
 }) => {
@@ -24,9 +24,9 @@ const FBScorekeeper = ({
       </div>
       <button onClick={() => Change_Period()}>Change Quarter</button>
       <br></br>
-      <button onClick={() => ResetTime(15)}>reset clock</button>
+      <button onClick={() => ResetTime(15, -1)}>reset clock</button>
       <button onClick={() => DecrementTime()}>run clock</button>
-      <button onClick={() => StopDecrement()}>stop clock</button>
+      <button onClick={() => StopClock()}>stop clock</button>
       <br></br>
       <button onClick={() => DefDown("1st")}>1st Down</button>
       <button onClick={() => DefDown("2nd")}>2rd Down</button>

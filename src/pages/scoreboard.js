@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 //base template elements
 import FBSlim from "./scoreboards/FB_Slim";
+import Soccer from "./scoreboards/Soccer";
 
 const Scoreboard = () => {
   // Initialize data
@@ -33,11 +34,13 @@ const Scoreboard = () => {
   }, []);
 
   // TODO: add conditional rendering for different templates
-  // since the following scoreboard templates go over the stream, 
-  // they need to maintain an 1080p window size (to fit the broadcast window) 
+  // since the following scoreboard templates go over the stream,
+  // they need to maintain an 1080p window size (to fit the broadcast window)
   // for proper output over the broadcast and may not be responsive
-  return (
-    <>
+  const ScoreType = localStorage.getItem("ScoreboardType");
+  let ScoreboardComponent;
+  if (ScoreType === "FBSlim") {
+    ScoreboardComponent = (
       <FBSlim
         H_score={H_score}
         V_score={V_score}
@@ -46,6 +49,15 @@ const Scoreboard = () => {
         Down={Down}
         Distance={Distance}
       />
+    );
+  } else if (ScoreType === "Soccer") {
+    ScoreboardComponent = (
+      <Soccer H_score={H_score} V_score={V_score} Period={Period} Time={Time} />
+    );
+  }
+  return (
+    <>
+      <div>{ScoreboardComponent}</div>
     </>
   );
 };
