@@ -18,13 +18,15 @@
   background-image: url("/public/playdrawings.png");
   background-attachment: scroll;
   background-size: auto;
-  background-repeat: no-repeatwd;
+  background-repeat: no-repeated;
 }
 
 .container h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 5rem;
   color: white;
+  font-weight: 100;
+  font-style: oblique;
 }
 
 a {
@@ -37,23 +39,58 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
-.about h1 {
-  color: black;
+.generic {
+  font-weight: bold;
+  max-width: 80%;
+  font-style: italic;
 }
 
 .about {
-  margin: 0% 5% 0% 5%;
+  flex: 1;
+  background-color: #E4F4F3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 50%;  */
+  align-items: center;
   text-align: center;
 }
+.full-width-container {
+  background-color: #E4F4F3;
+}
 
+.about h1{
+  text-align: center;
+  color: black;
+
+}
+
+.about-desc {
+  max-width: 80%;
+  margin: 0;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 0 20px;
+}
+
+.broadcast-button {
+  background-color: #00B6BC;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+.broadcast-button:hover {
+  background-color: #0C6170;
+}
 /*devices that are larger than tablets*/
 @media only screen and (min-width: 768px) {
   .container {
     display: flex;
     height: 100vh;
   }
-
+ 
 
 }
