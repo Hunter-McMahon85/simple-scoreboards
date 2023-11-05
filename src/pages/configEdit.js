@@ -1,26 +1,157 @@
-
-import React from "react";
-import { Button, Heading, View, Card } from "@aws-amplify/ui-react";
-import { Auth } from 'aws-amplify'
+import React, { useState } from "react";
+import { Button, View, Card } from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
+import { Auth } from "aws-amplify";
+import "../css/configEdit.css";
+import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
 
 async function signOut() {
-    try {
-      await Auth.signOut();
-    } catch (error) {
-      console.log('error signing out: ', error);
-    }
+  try {
+    await Auth.signOut();
+  } catch (error) {
+    console.log("error signing out: ", error);
+  }
 }
 
-const configEditor = () => {
+const ConfigEditor = () => {
+  // Variables for setting and getting the two images, two colors, and sport the user will choose
+  // probably more cases I need to consider 
+  const [team1Image, setTeam1Image] = useState(null);
+  const [team2Image, setTeam2Image] = useState(null);
+  const [color1, setColor1] = useState("#000000");
+  const [color2, setColor2] = useState("#000000");  
+  const [selectedSport, setSelectedSport] = useState("Choose a sport");
+  const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
+
+
+  const handleSportSelection = (sport) => {
+    setSelectedSport(sport);
+  };
+
+  const handleTemplateSelection = (temp) => {
+    setSelectedTemplate(temp);
+  };
+
+  const ColorChange1 = (event) => {
+    setColor1(event.target.value);
+  };
+
+  const ColorChange2 = (event) => {
+    setColor2(event.target.value);
+  };
+
+  const SaveTemplate = () => {
+    //something with database stuffss will eventually go here
+  };
+
+  
+  const handleImageUpload = (event, setImage, teamNum) => {
+    const file = event.target.files[0];
+    const img = new Image();
+    img.onload = () => {
+      // Completely forgot what size we said to restrict the image to.
+      if (img.width > 256 || img.height > 256) {
+        alert("Image dimensions must be 256x256 pixels or smaller.");
+        event.target.value = null;
+      } else {
+        setImage(file);
+      }
+    };
+    img.src = URL.createObjectURL(file);
+    const fileInput = document.getElementById(`team${teamNum}ImageInput`);
+    fileInput.previousSibling.textContent = file.name; // Changes the text of the button to the file name
+  };
+
+  const handleFileUploadClick = (teamNum) => {
+    document.getElementById(`team${teamNum}ImageInput`).click();
+  };
+  
+
+// Spagehtti Code Incoming
   return (
     <View className="App">
       <Card>
-        
-        <Heading level={1}>template editor</Heading>
+        <h1>Template Editor</h1>
       </Card>
-      <Button onClick={signOut}>Sign Out</Button>
+
+      <div className="ButtonContainer">
+        <Link to="/mydashboard">
+          <Button>Home</Button>
+        </Link>
+        <Button className="signout" onClick={signOut}>Sign Out</Button>
+      </div>
+
+      <div className="Sidebar">
+        {/* Two colors */}
+        <input className="colorPicker" type="color" value={color1} onChange={ColorChange1} />
+        <input className="colorPicker" type="color" value={color2} onChange={ColorChange2} />
+
+        {/* Button press to upload the user image for the teams */}
+        {/* Temporarily displaying it in the bottom corners */}
+        <input
+          id="team1ImageInput"
+          type="file"
+          style={{ display: "none" }}
+          onChange={(e) => handleImageUpload(e, setTeam1Image, 1)}
+        />
+        <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
+          {team1Image ? team1Image.name : "Upload File"}
+        </button>
+        {team1Image && (
+          <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
+        )}
+
+        <input
+          id="team2ImageInput"
+          type="file"
+          style={{ display: "none" }}
+          onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
+        />
+        <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
+          {team2Image ? team2Image.name : "Upload File"}
+        </button>
+        {team2Image && (
+          <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
+        )}
+
+        {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
+        Its sorta responsive 
+        Choice of sports will eventually change which scoreboard pops up to let the user modify it
+        Will probably have to redo the code a lot if I'm imagining what might happen right */}
+        <Menu
+          trigger={
+            <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
+              {selectedSport}
+            </MenuButton>
+          }
+        >
+          <MenuItem onClick={() => handleSportSelection("Football")}>Football</MenuItem>
+          <MenuItem onClick={() => handleSportSelection("Soccer")}>Soccer</MenuItem>
+        </Menu>
+
+        {/* This Button is for grabbing the users old saved templates to remodify */}
+        {/* Will need somewhere to delete templates maybe? */}
+        <Menu
+          trigger={
+            <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
+            {selectedTemplate}
+            </MenuButton>
+          }
+        >
+          <MenuItem onClick={() => handleTemplateSelection("Template 1")}>Saved Template 1</MenuItem>
+          <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
+        </Menu>
+      </div>
+
+      {/* NOTE: Somehow naming this the same as the other container messes up the home page css
+      even though this links a different cs file and that one...idek */}
+      <div className="container3">
+      <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
+      </div>
+
+
     </View>
   );
 };
 
-export default configEditor;
+export default ConfigEditor;
