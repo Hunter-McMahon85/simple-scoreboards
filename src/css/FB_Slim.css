@@ -1,12 +1,12 @@
 .FB_Slim_Container {
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content:left;
     min-height: 1080px;
     width: 1920px;
 }
 
-.FB_Slim_items{
+.FB_Slim_Container .FB_Slim_items{
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -17,4 +17,5 @@
 
 h1 {
     margin: 0% 2% 0% 2%;
+    font-size: xx-large;
 }

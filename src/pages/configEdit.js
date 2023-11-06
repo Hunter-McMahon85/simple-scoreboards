@@ -18,8 +18,8 @@ const ConfigEditor = () => {
   // probably more cases I need to consider 
   const [team1Image, setTeam1Image] = useState(null);
   const [team2Image, setTeam2Image] = useState(null);
-  const [color1, setColor1] = useState("#000000");
-  const [color2, setColor2] = useState("#000000");  
+  const [color1, setColor1] = useState("#90ee90");
+  const [color2, setColor2] = useState("#90ee90");  
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
   const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
 
@@ -66,6 +66,27 @@ const ConfigEditor = () => {
     document.getElementById(`team${teamNum}ImageInput`).click();
   };
   
+  // Slight modification to Hunters function to allow color changes
+  const FBSlim = ({ V_score, H_score, Period, Time, Down, Distance, color1, color2 }) => {
+    return (
+      <>
+        <div className="FB_Slim_Container" >
+          <div className="FB_Slim_items" style={{ backgroundImage: `linear-gradient(to right, ${color1} 50%, ${color2} 50%)`}}>
+            <img alt="Broadcaster Logo"></img>
+            <h1> Home Score: {H_score} </h1>
+            <h1> Visitor Score: {V_score} </h1>
+            <h1> Quarter {Period} </h1>
+            <h1> {Time} | </h1>
+            <h1>
+              {Down} & {Distance}
+            </h1>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+
 
 // Spagehtti Code Incoming
   return (
@@ -76,7 +97,7 @@ const ConfigEditor = () => {
 
       <div className="ButtonContainer">
         <Link to="/mydashboard">
-          <Button>Home</Button>
+          <Button className="homeButton">Home</Button>
         </Link>
         <Button className="signout" onClick={signOut}>Sign Out</Button>
       </div>
@@ -142,6 +163,19 @@ const ConfigEditor = () => {
           <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
         </Menu>
       </div>
+
+      {/* Temporarily Putting this in like this  */}
+      
+      <FBSlim
+        V_score={0}
+        H_score={0}
+        Period={0}
+        Time={0}
+        Down={0}
+        Distance={0}
+        color1={color1}
+        color2={color2}
+      />
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}
