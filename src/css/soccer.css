@@ -1,20 +1,36 @@
-.FB_Slim_Container {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    min-height: 1080px;
-    width: 1920px;
+.soccer_Container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
 }
 
-.FB_Slim_items{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.soccer_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+}
+
+.soccer_items h1 {
+  margin: 0;
+}
+
+.score {
+    width: 8%;
+    background-color: white;
     border: 5px solid black;
-    width: 100%;
-    background-color: beige;
 }
 
-h1 {
-    margin: 0% 2% 0% 2%;
+.team {
+    border: 5px solid black;
+    width: 29%;
+    padding: 0% 2% 0% 2%;
+}
+
+.soccer_middle{
+    border: 5px solid black;
+    background-color: rgba(100, 100, 100, 0.5);
 }

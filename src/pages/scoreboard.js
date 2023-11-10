@@ -48,6 +48,8 @@ const Scoreboard = () => {
         Time={Time}
         Down={Down}
         Distance={Distance}
+        hcolor={"blue"}
+        vcolor={"red"}
       />
     );
   } else if (ScoreType === "Soccer") {
