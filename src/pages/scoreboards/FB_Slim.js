@@ -1,14 +1,22 @@
 import React from "react";
 import "../../css/FB_Slim.css";
 
-const FBSlim = ({ V_score, H_score, Period, Time, Down, Distance, hcolor, vcolor}) => {
+const FBSlim = ({
+  V_score,
+  H_score,
+  Period,
+  Time,
+  Down,
+  Distance,
+  hcolor,
+  vcolor,
+}) => {
   const home_color = {
     backgroundColor: hcolor,
-
-  }
+  };
   const vis_color = {
     backgroundColor: vcolor,
-  }
+  };
   return (
     <>
       <div className="FB_Slim_Container">

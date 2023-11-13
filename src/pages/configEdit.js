@@ -5,6 +5,7 @@ import { Auth } from "aws-amplify";
 import "../css/configEdit.css";
 import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
 import FBSlim from "./scoreboards/FB_Slim";
+import Soccer from "./scoreboards/Soccer";
 
 async function signOut() {
   try {
@@ -23,10 +24,40 @@ const ConfigEditor = () => {
   const [color2, setColor2] = useState("#90ee90");  
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
   const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
-
+  const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
 
   const handleSportSelection = (sport) => {
     setSelectedSport(sport);
+    switch (sport) {
+      case "Football":
+        setSBComponent(
+          <FBSlim
+            H_score={10}
+            V_score={10}
+            Period={1}
+            Time={"15:00"}
+            Down={"1st"}
+            Distance={10}
+            hcolor={"blue"}
+            vcolor={"red"}
+          />
+        );
+        break;
+      case "Soccer":
+        setSBComponent(
+          <Soccer
+            H_score={10}
+            V_score={10}
+            Period={1}
+            Time={"00:00"}
+            hcolor={"blue"}
+            vcolor={"red"}
+          />
+        );
+        break;
+      default:
+        break;
+    } 
   };
 
   const handleTemplateSelection = (temp) => {
@@ -148,16 +179,7 @@ const ConfigEditor = () => {
 
       {/* Temporarily Putting this in like this  */}
       
-      <FBSlim
-        H_score={10}
-        V_score={10}
-        Period={4}
-        Time={15}
-        Down={4}
-        Distance={10}
-        hcolor={color1}
-        vcolor={color2}
-      />
+      <div>{SBComponent}</div>
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}

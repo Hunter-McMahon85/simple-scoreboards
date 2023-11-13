@@ -42,7 +42,7 @@ function App() {
         <Route
           exact
           path="/myscoreboard"
-          Component={withAuthenticator(scoreboard)}
+          Component={scoreboard}
         ></Route>
       </Routes>
     </Router>

@@ -20,8 +20,8 @@
 
 .score {
     width: 8%;
-    background-color: white;
     border: 5px solid black;
+    background-color: white;
 }
 
 .team {

@@ -26,36 +26,45 @@ const Scoreboard = () => {
   useEffect(() => {
     reload();
     const interval = setInterval(reload, 1);
-    // this is so if this page is used as a component the setinterval closes
-    //when the component is closed
+    // this is so if this page is used as a component the interval ends
+    // when the component is closed
     return () => {
       clearInterval(interval);
     };
   }, []);
 
   // TODO: add conditional rendering for different templates
-  // since the following scoreboard templates go over the stream,
-  // they need to maintain an 1080p window size (to fit the broadcast window)
-  // for proper output over the broadcast and may not be responsive
   const ScoreType = localStorage.getItem("ScoreboardType");
   let ScoreboardComponent;
-  if (ScoreType === "FBSlim") {
-    ScoreboardComponent = (
-      <FBSlim
-        H_score={H_score}
-        V_score={V_score}
-        Period={Period}
-        Time={Time}
-        Down={Down}
-        Distance={Distance}
-        hcolor={"blue"}
-        vcolor={"red"}
-      />
-    );
-  } else if (ScoreType === "Soccer") {
-    ScoreboardComponent = (
-      <Soccer H_score={H_score} V_score={V_score} Period={Period} Time={Time} />
-    );
+  switch (ScoreType) {
+    case "FBSlim":
+      ScoreboardComponent = (
+        <FBSlim
+          H_score={H_score}
+          V_score={V_score}
+          Period={Period}
+          Time={Time}
+          Down={Down}
+          Distance={Distance}
+          hcolor={"blue"}
+          vcolor={"red"}
+        />
+      );
+      break;
+    case "Soccer":
+      ScoreboardComponent = (
+        <Soccer
+          H_score={H_score}
+          V_score={V_score}
+          Period={Period}
+          Time={Time}
+          hcolor={"blue"}
+          vcolor={"red"}
+        />
+      );
+      break;
+    default:
+      break;
   }
   return (
     <>

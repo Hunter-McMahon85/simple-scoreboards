@@ -167,7 +167,6 @@ const Scorekeeper = () => {
     <>
       <div className="scorekeeper">
         <div>{ScoreKeeperComponent}</div>
-
         <Link to="/myscoreboard">
           <button>go to scoreboard</button>
         </Link>
