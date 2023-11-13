@@ -38,8 +38,8 @@ const ConfigEditor = () => {
             Time={"15:00"}
             Down={"1st"}
             Distance={10}
-            hcolor={"blue"}
-            vcolor={"red"}
+            hcolor={color1}
+            vcolor={color2}
           />
         );
         break;
@@ -50,8 +50,8 @@ const ConfigEditor = () => {
             V_score={10}
             Period={1}
             Time={"00:00"}
-            hcolor={"blue"}
-            vcolor={"red"}
+            hcolor={color1}
+            vcolor={color2}
           />
         );
         break;
@@ -66,10 +66,12 @@ const ConfigEditor = () => {
 
   const ColorChange1 = (event) => {
     setColor1(event.target.value);
+    handleSportSelection(selectedSport);
   };
 
   const ColorChange2 = (event) => {
     setColor2(event.target.value);
+    handleSportSelection(selectedSport);
   };
 
   const SaveTemplate = () => {
