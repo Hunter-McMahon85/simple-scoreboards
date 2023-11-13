@@ -162,7 +162,11 @@ const Scorekeeper = () => {
       />
     );
   }
-
+  
+  let obs = "False";
+  if (typeof obsstudio !== "undefined") {
+    obs = "true";
+  }
   return (
     <>
       <div className="scorekeeper">
@@ -173,6 +177,7 @@ const Scorekeeper = () => {
         <Link to="/mydashboard">
           <button>End Session</button>
         </Link>
+        {obs}
       </div>
     </>
   );

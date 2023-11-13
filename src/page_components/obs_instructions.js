@@ -1,0 +1,1 @@
+// component for guiding users on how to set up application with OBS

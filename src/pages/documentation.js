@@ -1,3 +1,4 @@
+// component for use documentation
 import React from "react";
 import "../css/home.css";
 

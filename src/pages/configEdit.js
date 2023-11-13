@@ -1,3 +1,4 @@
+// component where users can customize their scoreboards
 import React, { useState } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";

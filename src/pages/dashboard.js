@@ -1,3 +1,4 @@
+// component for users choose a session to start or edit a scoreboard
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";

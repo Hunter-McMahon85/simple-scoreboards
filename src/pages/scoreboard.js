@@ -1,3 +1,4 @@
+// container component for the scoreboard pages
 import React, { useState, useEffect } from "react";
 //base template elements
 import FBSlim from "./scoreboards/FB_Slim";
