@@ -16,5 +16,23 @@
         "simplescoreboardsv27d178aa8": {}
       }
     }
+  },
+  "hunterdev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-simplescoreboardsv2-hunterdev-102848-authRole",
+      "UnauthRoleArn": "arn:aws:iam::253556286419:role/amplify-simplescoreboardsv2-hunterdev-102848-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::253556286419:role/amplify-simplescoreboardsv2-hunterdev-102848-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-simplescoreboardsv2-hunterdev-102848-deployment",
+      "UnauthRoleName": "amplify-simplescoreboardsv2-hunterdev-102848-unauthRole",
+      "StackName": "amplify-simplescoreboardsv2-hunterdev-102848",
+      "StackId": "arn:aws:cloudformation:us-west-2:253556286419:stack/amplify-simplescoreboardsv2-hunterdev-102848/7de4cd60-8252-11ee-bfbd-0679ed9b0e85",
+      "AmplifyAppId": "d2qmoej32ccq7a"
+    },
+    "categories": {
+      "auth": {
+        "simplescoreboardsv27d178aa8": {}
+      }
+    }
   }
 }
