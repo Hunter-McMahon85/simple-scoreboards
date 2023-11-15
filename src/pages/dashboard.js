@@ -36,13 +36,14 @@ const Dashboard = () => {
         </Link>
 
         <Link to="/presetcreator">
-          <button className="PresetCreatorButton">
-            Create Scoreboard Preset
+          <button className="PresetCreatorButton" alt="Create a new template preset">
+            New Preset
           </button>
         </Link>
 
-        <button onClick={handleopenSessionStart} className="StartSessionButton">
-          Start Scorekeeping Session
+        <button onClick={handleopenSessionStart} className="StartSessionButton"
+         alt="Start a scorekeeping session">
+          New Session
         </button>
 
         <div className="user_presets">
