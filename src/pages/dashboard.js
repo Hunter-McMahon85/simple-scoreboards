@@ -36,17 +36,18 @@ const Dashboard = () => {
         </Link>
 
         <Link to="/presetcreator">
-          <button className="PresetCreatorButton">
-            Create Scoreboard Preset
+          <button className="PresetCreatorButton" title="Create a new template preset">
+            New Preset
           </button>
         </Link>
 
-        <button onClick={handleopenSessionStart} className="StartSessionButton">
-          Start Scorekeeping Session
+        <button onClick={handleopenSessionStart} className="StartSessionButton"
+         title="Start a scorekeeping session">
+          Start Session
         </button>
 
         <div className="user_presets">
-          <h3>Saved Presets (placeholder)</h3>
+          <h3>Saved Presets (Database not active)</h3>
 
           {/* add source for image within the buttons */}
           <button className="PresetTile">1</button>
