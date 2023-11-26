@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Auth } from "aws-amplify";
 import { Link } from "react-router-dom";
 import SessionStart from "../page_components/session_config";
+import SeshSetup from "../page_components/obs_instructions";
 import "../css/dashboard.css";
 
 async function signOut() {
@@ -23,6 +24,19 @@ const Dashboard = () => {
   const handleCloseSessionStart = () => {
     setShowSessionStart(false);
   };
+
+  let popup = (
+    <>
+      {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}
+    </>
+  );
+  if (typeof obsstudio !== "undefined") {
+    popup = (
+      <>
+        {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
+      </>
+    );
+  }
 
   return (
     <>
@@ -56,9 +70,8 @@ const Dashboard = () => {
 
           <button className="PresetTile">3</button>
         </div>
-
-        {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
       </div>
+      {popup}
     </>
   );
 };
