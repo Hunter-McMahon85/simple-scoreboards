@@ -6,16 +6,31 @@
     width: 100vw;
 }
 
-.FB_Slim_Container .FB_Slim_items{
+.FB_Slim_items{
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    border: 5px solid black;
+    border: 2.5px solid black;
     width: 100%;
-    background-color: beige;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-h1 {
-    margin: 0% 2% 0% 2%;
+.FB_Slim_items h1 {
+    padding: 0% 2% 0% 2%;
     font-size: xx-large;
+    border: 2.5px solid black;
+}
+
+.FBscore {
+    border: 2.5px solid black;
+    background-color: white;
+    height: 100%
+}
+
+.FBsit {
+    background-color: black;
+    display: inherit;
+    color: white;
+    padding: 0% 2% 0% 2%;
+    width: 235x;
 }

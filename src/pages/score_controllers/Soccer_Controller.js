@@ -19,11 +19,11 @@ const SoccerScorekeeper = ({
   return (
     <div className="scorekeeper">
       <div className="teams">
-        <div className="Home">
+        <div className="Home" style={home_color}>
           <button onClick={() => U_score("h", 1)}>Home Goal</button>
           <button onClick={() => U_score("h", -1)}>Undo Goal</button>
         </div>
-        <div className="Away">
+        <div className="Away" style={vis_color}>
           <button onClick={() => U_score("v", 1)}>Visitors Goal</button>
           <button onClick={() => U_score("v", -1)}>Undo Goal</button>
         </div>
