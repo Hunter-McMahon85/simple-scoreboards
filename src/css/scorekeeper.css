@@ -1,0 +1,79 @@
+.SeshEnd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: grey;
+}
+
+.SeshEnd button {
+  margin: 10px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.scorekeeper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  width: 100vw;
+  background-color: grey;
+}
+
+.scorekeeper button {
+  margin: 10px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.Home,
+.Away {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0% 5% 0%;
+  width: 100vw;
+}
+
+.Home button,
+.Away button {
+  margin: 2%;
+}
+
+.scorekeeper button {
+  margin-bottom: 10px;
+}
+
+.scorekeeper input {
+  margin-bottom: 10px;
+}
+
+.timectrl {
+  margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+  .teams {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .Home,
+  .Away {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 0% 2% 0%;
+  }
+
+  .Home button,
+  .Away button {
+    margin: 1%;
+  }
+}

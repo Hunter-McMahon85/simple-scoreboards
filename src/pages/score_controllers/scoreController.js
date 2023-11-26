@@ -150,6 +150,8 @@ const ScoreController = () => {
           StopClock={StopClock}
           DefDistance={DefDistance}
           DefDown={DefDown}
+          hcolor={"blue"}
+          vcolor={"red"}
         />
       );
       break;
@@ -161,6 +163,8 @@ const ScoreController = () => {
           ResetTime={ResetTime}
           IncrementTime={IncrementTime}
           StopClock={StopClock}
+          hcolor={"blue"}
+          vcolor={"red"}
         />
       );
       break;
@@ -171,14 +175,16 @@ const ScoreController = () => {
 
   return (
     <>
-      <div className="scorekeeper">
+      <div>
         <div>{ScoreKeeperComponent}</div>
-        <Link to="/myscoreboard">
-          <button>go to scoreboard</button>
-        </Link>
-        <Link to="/mydashboard">
-          <button>End Session</button>
-        </Link>
+        <div className="SeshEnd">
+          <Link to="/myscoreboard">
+            <button>go to scoreboard</button>
+          </Link>
+          <Link to="/mydashboard">
+            <button>End Session</button>
+          </Link>
+        </div>
       </div>
     </>
   );

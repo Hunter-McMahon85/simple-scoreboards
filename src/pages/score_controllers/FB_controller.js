@@ -8,31 +8,80 @@ const FBScorekeeper = ({
   StopClock,
   DefDown,
   DefDistance,
+  hcolor,
+  vcolor,
 }) => {
   const [DistIn, setDistIn] = useState("");
+  const [LastScore, setLastScore] = useState(0);
+  const home_color = {
+    backgroundColor: hcolor,
+  };
+  const vis_color = {
+    backgroundColor: vcolor,
+  };
 
   const handleDistIn = (event) => {
     setDistIn(event.target.value);
   };
+
+  const handleScoreChange = (team, amount) => {
+    U_score(team, amount);
+    setLastScore(amount * -1);
+  };
+
   return (
-    <div className="FB_scorekeeper">
-      <div className="Home">
-        <button onClick={() => U_score("h", 6)}>home_td</button>
+    <div className="scorekeeper">
+      <div className="teams">
+        <div className="Home" style={home_color}>
+          <button onClick={() => handleScoreChange("h", 6)}>
+            6pts (Touchdown)
+          </button>
+          <button onClick={() => handleScoreChange("h", 3)}>
+            3pts (Field Goal)
+          </button>
+          <button onClick={() => handleScoreChange("h", 2)}>
+            2pts (Safety/Conversion)
+          </button>
+          <button onClick={() => handleScoreChange("h", 1)}>
+            1pts (Extra Point)
+          </button>
+          <button onClick={() => U_score("h", LastScore)}>
+            Undo Last Home Score
+          </button>
+        </div>
+        <div className="Away" style={vis_color}>
+          <button onClick={() => handleScoreChange("v", 6)}>
+            6pts (Touchdown)
+          </button>
+          <button onClick={() => handleScoreChange("v", 3)}>
+            3pts (Field Goal)
+          </button>
+          <button onClick={() => handleScoreChange("v", 2)}>
+            2pts (Safety/Conversion)
+          </button>
+          <button onClick={() => handleScoreChange("v", 1)}>
+            1pts (Extra Point)
+          </button>
+          <button onClick={() => U_score("v", LastScore)}>
+            Undo Last Vis Score
+          </button>
+        </div>
       </div>
-      <div className="Away">
-        <button onClick={() => U_score("v", 6)}>vis_td</button>
+      <div className="timectrl">
+        <button onClick={() => Change_Period()}>Change Quarter</button>
+        <button onClick={() => ResetTime(15, -1)}>Reset Clock</button>
+        <button onClick={() => DecrementTime()}>Run Clock</button>
+        <button onClick={() => StopClock()}>Stop Clock</button>
       </div>
-      <button onClick={() => Change_Period()}>Change Quarter</button>
       <br></br>
-      <button onClick={() => ResetTime(15, -1)}>reset clock</button>
-      <button onClick={() => DecrementTime()}>run clock</button>
-      <button onClick={() => StopClock()}>stop clock</button>
+      <div className="misctrl">
+        <button onClick={() => DefDown("1st")}>1st Down</button>
+        <button onClick={() => DefDown("2nd")}>2rd Down</button>
+        <button onClick={() => DefDown("3rd")}>3rd Down</button>
+        <button onClick={() => DefDown("4th")}>4th Down</button>
+      </div>
       <br></br>
-      <button onClick={() => DefDown("1st")}>1st Down</button>
-      <button onClick={() => DefDown("2nd")}>2rd Down</button>
-      <button onClick={() => DefDown("3rd")}>3rd Down</button>
-      <button onClick={() => DefDown("4th")}>4th Down</button>
-      <br></br>
+      <p>Enter Distance:</p>
       <input type="text" value={DistIn} onChange={handleDistIn}></input>
       <button onClick={() => DefDistance(DistIn)}>Change Distance</button>
     </div>

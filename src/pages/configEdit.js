@@ -179,8 +179,6 @@ const ConfigEditor = () => {
           <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
         </Menu>
       </div>
-
-      {/* Temporarily Putting this in like this  */}
       
       <div>{SBComponent}</div>
 
