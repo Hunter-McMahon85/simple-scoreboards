@@ -62,7 +62,7 @@ const Dashboard = () => {
         </button>
 
         <div className="user_presets">
-          <h3>Saved Presets (Database not active)</h3>
+          <h3>Saved Presets </h3>
 
           {/* add source for image within the buttons */}
           <button className="PresetTile">1</button>
