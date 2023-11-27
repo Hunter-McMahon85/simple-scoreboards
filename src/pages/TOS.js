@@ -1,1 +1,0 @@
-// app terms of service

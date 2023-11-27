@@ -42,7 +42,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="dash_body">
-        <h1>Welcome to the dashboard!</h1>
+        <h1>Your Scoreboards</h1>
 
         <Link to="/">
           <button onClick={signOut} className="SObutton">
