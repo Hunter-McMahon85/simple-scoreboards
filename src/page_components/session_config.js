@@ -41,7 +41,7 @@ function SessionStart({ onClose }) {
             </button>
           </Link>
           <br></br>
-          <button onClick={onClose}>Close Component</button>
+          <button onClick={onClose}>Close</button>
         </div>
       </div>
     </>
