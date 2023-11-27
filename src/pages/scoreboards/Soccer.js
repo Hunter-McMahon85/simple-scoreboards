@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/soccer.css";
+import "./scorecss/soccer.css";
 
 const Soccer = ({ V_score, H_score, Period, Time, hcolor, vcolor }) => {
   const home_color = {

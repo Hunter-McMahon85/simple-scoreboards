@@ -1,12 +1,8 @@
 // component for guiding users on how to set up application with OBS
 import React from "react";
-import { Link } from "react-router-dom";
 import "../css/dashboard.css";
 
 function SeshSetup({ onClose }) {
-  const Board_Choice = (B) => {
-    localStorage.setItem("ScoreboardType", B);
-  };
   return (
     <>
       <div className="SCcontain">

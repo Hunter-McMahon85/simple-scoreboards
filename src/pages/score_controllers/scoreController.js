@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // our different score controllers
 import FBScorekeeper from "./FB_controller";
 import SoccerScorekeeper from "./Soccer_Controller";
+import BaseballController from "./Basball_Controller";
 
 /*
 Vars and Functions in Scorekeeper:
@@ -14,6 +15,10 @@ Period - tracks the period, half, quarter, inning, etc.
 Time - tracks time in game
 Down - tracks downs (Football), Number of Outs (baseball), etc.
 Distance - Holds any needed distance values (downs till 1st,)
+strikes - baseball/softball 
+balls - baseball/softball
+runners - baseball/softball
+possetion - who's on offense 
 
 Functions:
 U_score(team, n)- +/- n points from given team
@@ -134,6 +139,34 @@ const ScoreController = () => {
     distance = d;
     localStorage.setItem("Distance", distance);
   }
+
+  let strikes = 0;
+  let balls = 0;
+  localStorage.setItem("Strikes", strikes);
+  localStorage.setItem("Balls", balls); 
+  function pitch_res(t, x)
+  {
+    switch(t)
+    {
+      case "b":
+        balls = x;
+        localStorage.setItem("Balls", balls); 
+        break;
+      case "s":
+        strikes = x;
+        localStorage.setItem("Strikes", strikes);
+        break;
+      default:
+      break;
+    }
+  }
+
+  let possetion = "";
+  localStorage.setItem("Possetion", possetion); 
+  function Change_Pos(t) {
+    possetion = t;
+    localStorage.setItem("Possetion", possetion); 
+  }
   // in the following, we will have multiple elements like FBScorekeeper
   // TODO: create more sports templates and setup conditional rendering
   // based on user input from dashboard
@@ -163,6 +196,20 @@ const ScoreController = () => {
           ResetTime={ResetTime}
           IncrementTime={IncrementTime}
           StopClock={StopClock}
+          hcolor={"blue"}
+          vcolor={"red"}
+        />
+      );
+      break;
+    case "Baseball":
+      /*TODO: add graphics for baserunners*/
+      ScoreKeeperComponent = (
+        <BaseballController
+          U_score={U_score}
+          Change_Period={Change_Period}
+          pitch_res={pitch_res}
+          DefDown={DefDown}
+          Change_Pos={Change_Pos}
           hcolor={"blue"}
           vcolor={"red"}
         />

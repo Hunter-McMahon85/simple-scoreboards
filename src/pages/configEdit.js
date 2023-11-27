@@ -7,6 +7,7 @@ import "../css/configEdit.css";
 import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
+import Baseball from "./scoreboards/baseball";
 
 async function signOut() {
   try {
@@ -22,7 +23,7 @@ const ConfigEditor = () => {
   const [team1Image, setTeam1Image] = useState(null);
   const [team2Image, setTeam2Image] = useState(null);
   const [color1, setColor1] = useState("#90ee90");
-  const [color2, setColor2] = useState("#90ee90");  
+  const [color2, setColor2] = useState("#90ee90");
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
   const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
@@ -56,9 +57,24 @@ const ConfigEditor = () => {
           />
         );
         break;
+      case "Baseball":
+        setSBComponent(
+          <Baseball
+            H_score={10}
+            V_score={10}
+            Period={5}
+            Down={"1"}
+            Balls={3}
+            Strikes={2}
+            Possetion={"T"}
+            hcolor={color1}
+            vcolor={color2}
+          />
+        );
+        break;
       default:
         break;
-    } 
+    }
   };
 
   const handleTemplateSelection = (temp) => {
@@ -79,7 +95,7 @@ const ConfigEditor = () => {
     //something with database stuffss will eventually go here
   };
 
-  
+
   const handleImageUpload = (event, setImage, teamNum) => {
     const file = event.target.files[0];
     const img = new Image();
@@ -100,11 +116,11 @@ const ConfigEditor = () => {
   const handleFileUploadClick = (teamNum) => {
     document.getElementById(`team${teamNum}ImageInput`).click();
   };
-  
+
   // Slight modification to Hunters function to allow color changes
 
 
-// Spagehtti Code Incoming
+  // Spagehtti Code Incoming
   return (
     <View className="App">
       <Card>
@@ -164,6 +180,7 @@ const ConfigEditor = () => {
         >
           <MenuItem onClick={() => handleSportSelection("Football")}>Football</MenuItem>
           <MenuItem onClick={() => handleSportSelection("Soccer")}>Soccer</MenuItem>
+          <MenuItem onClick={() => handleSportSelection("Baseball")}>Baseball/Softball</MenuItem>
         </Menu>
 
         {/* This Button is for grabbing the users old saved templates to remodify */}
@@ -171,7 +188,7 @@ const ConfigEditor = () => {
         <Menu
           trigger={
             <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
-            {selectedTemplate}
+              {selectedTemplate}
             </MenuButton>
           }
         >
@@ -179,13 +196,15 @@ const ConfigEditor = () => {
           <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
         </Menu>
       </div>
-      
-      <div>{SBComponent}</div>
+
+      <div>
+        {SBComponent}
+      </div>
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}
       <div className="container3">
-      <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
+        <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
       </div>
 
 

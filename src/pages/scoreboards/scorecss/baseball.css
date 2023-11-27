@@ -1,0 +1,40 @@
+.baseball_Container {
+    display: flex;
+    align-items: flex-end;
+    justify-content:left;
+    height: 100vh;
+    width: 100vw;
+}
+
+.baseball_items {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-bottom: 20px ;
+}
+
+.baseball_items h1 {
+    font-size: x-large;
+}
+
+.teams h1 {
+    width: auto;
+    padding: 0px 5px 0px 5px;
+    border: 2.5px solid black;
+}
+
+.scores h1 {
+    width: 45px;
+    border: 2.5px solid black;
+}
+
+.misc_info {
+    background-color: black;
+}
+
+.misc_info h1 {
+    color: white;
+    font-size: larger;
+}

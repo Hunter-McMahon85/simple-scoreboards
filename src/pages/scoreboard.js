@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 //base template elements
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
+import Baseball from "./scoreboards/baseball";
 
 const Scoreboard = () => {
   // Initialize data
@@ -12,6 +13,9 @@ const Scoreboard = () => {
   const [Time, setTime] = useState(0);
   const [Down, setDown] = useState(0);
   const [Distance, setDistance] = useState(0);
+  const [Balls, setBalls] = useState(0);
+  const [Strikes, setStrikes] = useState(0);
+  const [Possetion, setPossetion] = useState("");
 
   // fetch data from controller
   const reload = () => {
@@ -21,6 +25,9 @@ const Scoreboard = () => {
     setTime(localStorage.getItem("Time"));
     setDown(localStorage.getItem("Down"));
     setDistance(localStorage.getItem("Distance"));
+    setBalls(localStorage.getItem("Balls"));
+    setStrikes(localStorage.getItem("Strikes"));
+    setPossetion(localStorage.getItem("Possetion"));
   };
 
   // repetedly fetch to keep scoreboard updated
@@ -59,6 +66,21 @@ const Scoreboard = () => {
           V_score={V_score}
           Period={Period}
           Time={Time}
+          hcolor={"blue"}
+          vcolor={"red"}
+        />
+      );
+      break;
+    case "Baseball":
+      ScoreboardComponent = (
+        <Baseball
+          H_score={H_score}
+          V_score={V_score}
+          Period={Period}
+          Down={Down}
+          Balls={Balls}
+          Strikes={Strikes}
+          Possetion={Possetion}
           hcolor={"blue"}
           vcolor={"red"}
         />

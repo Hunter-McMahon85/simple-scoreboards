@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/FB_Slim.css";
+import "./scorecss/FB_Slim.css";
 
 const FBSlim = ({
   V_score,
@@ -17,11 +17,13 @@ const FBSlim = ({
   const vis_color = {
     backgroundColor: vcolor,
   };
+
+  const prod_img = "../../../logo192.png";
   return (
     <>
       <div className="FB_Slim_Container">
         <div className="FB_Slim_items">
-          <img alt="Broadcaster Logo"></img>
+          <img src={prod_img} alt="" height="52px" width={"52px"}/>
           <h1 style={home_color}>Home Team</h1>
           <h1 className="FBscore">{H_score}</h1>
           <h1 style={vis_color}>Visiting Team</h1>
