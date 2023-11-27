@@ -37,8 +37,8 @@ const landing = () => {
             We offer both tools and educational resources on how to create your
             own sports broadcast!
           </p>
-          <Link to="/learntobroadcast">
-            <button className="broadcast-button">Learn How To Become a Sports Broadcaster Here</button>
+          <Link to="/usingsimplescoreboards">
+            <button className="broadcast-button">Learn How To Use Simple Scoreboard Overlays Here</button>
           </Link>
           <h2>Sports with Simple Scoreboard Overlays:</h2>
           <ul>

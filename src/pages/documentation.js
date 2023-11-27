@@ -82,9 +82,11 @@ const documentation = () => {
             Scoreboards Overlay
           </p>
           <br></br>
-          <button className="SObutton">
-            Back To Dashboard
-          </button>
+          <Link to="/">
+            <button className="SObutton">
+              Home
+            </button>
+          </Link>
         </div>
       </div>
     </>
