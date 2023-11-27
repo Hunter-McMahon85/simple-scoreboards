@@ -28,6 +28,7 @@ const Dashboard = () => {
   let popup = (
     <>
       {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}
+      {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
     </>
   );
   if (typeof obsstudio !== "undefined") {

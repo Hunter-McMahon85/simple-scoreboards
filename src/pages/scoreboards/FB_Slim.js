@@ -23,9 +23,11 @@ const FBSlim = ({
     <>
       <div className="FB_Slim_Container">
         <div className="FB_Slim_items">
-          <img src={prod_img} alt="" height="52px" width={"52px"}/>
+          <img src={prod_img} alt="" height="56px" width="56px" />
           <h1 style={home_color}>Home Team</h1>
           <h1 className="FBscore">{H_score}</h1>
+
+          <img src={prod_img} alt="" height="56x" width="56px"/>
           <h1 style={vis_color}>Visiting Team</h1>
           <h1 className="FBscore">{V_score}</h1>
           <h1 className="FBsit"> Quarter {Period} </h1>

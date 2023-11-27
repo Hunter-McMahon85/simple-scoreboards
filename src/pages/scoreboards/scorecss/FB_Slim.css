@@ -13,12 +13,14 @@
     border: 2.5px solid black;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    height: 60px;
 }
 
 .FB_Slim_items h1 {
     padding: 0% 2% 0% 2%;
     font-size: xx-large;
-    border: 2.5px solid black;
+    border: 2.55px solid black;
+    height: 100%;
 }
 
 .FBscore {

@@ -11,15 +11,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 65%;
+  width: 100%;
 }
 
 .soccer_items h1 {
   margin: 0;
 }
 
+.soccer_items img {
+  border: 5px solid black;
+}
+
 .score {
-    width: 8%;
+    width: 5%;
     border: 5px solid black;
     background-color: white;
     height: 100%
@@ -27,8 +31,8 @@
 
 .team {
     border: 5px solid black;
-    width: 29%;
-    padding: 0% 2% 0% 2%;
+    width: 30%;
+    padding: 0% 0% 0% 0%;
 }
 
 .soccer_middle{
