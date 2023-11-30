@@ -8,6 +8,7 @@ import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";
+import axios from 'axios';
 
 async function signOut() {
   try {
@@ -16,6 +17,16 @@ async function signOut() {
     console.log("error signing out: ", error);
   }
 }
+
+// For grabbing the Amazon usrID
+const getUserId = async () => {
+  try {
+    const userInfo = await Auth.currentAuthenticatedUser();
+    return userInfo.attributes.sub; // 'sub' is the unique identifier for a Cognito user
+  } catch (error) {
+    console.error("Error fetching user info: ", error);
+  }
+};
 
 const ConfigEditor = () => {
   // Variables for setting and getting the two images, two colors, and sport the user will choose
@@ -91,8 +102,31 @@ const ConfigEditor = () => {
     handleSportSelection(selectedSport);
   };
 
-  const SaveTemplate = () => {
-    //something with database stuffss will eventually go here
+  const SaveTemplate = async () => {
+    //databse just takes in color and images
+    const userId = await getUserId();
+    const templateData = {
+      color1: color1,
+      color2: color2,
+      image1: "temp1", 
+      image2: "temp2", 
+      sport: selectedSport,
+      userID: userId
+    };
+
+  // endpoint URL  backend
+  const endpoint = 'ec2-34-209-99-170.us-west-2.compute.amazonaws.com'; 
+
+  // Send a POST request to the backend
+  try {
+    const response = await axios.post(endpoint, templateData);
+    console.log(response.data); 
+    alert('Template saved successfully!');
+  } catch (error) {
+    console.error('Error saving template:', error);
+    alert('Failed to save template.');
+  }
+
   };
 
 
