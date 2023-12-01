@@ -6,7 +6,7 @@
 h1 {
   margin: 0;
   font-size: 5rem;
-  font-family:'Franklin Gothic Medium';
+  font-family:Haettenschweiler;
   color: black;
   font-weight: 200;
   font-style: normal;
@@ -116,26 +116,7 @@ h1 {
 .file-input-label {
   margin-right: 62%;
 }
-.fileUploads {
-  margin-left: 1%;
-  margin-right: 1%;
-}
 
-.uploaded-image {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-  max-width: 150px;
-  height: auto;
-}
-
-.uploaded-image2 {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  max-width: 150px;
-  height: auto;
-}
 
 .sticky
 {

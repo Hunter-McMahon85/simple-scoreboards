@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify";
 import "../css/configEdit.css";
 import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
-import axios from 'axios';
+// import axios from 'axios';
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";
@@ -119,9 +119,9 @@ const ConfigEditor = () => {
     }
   };
 
-  const handleTemplateSelection = (temp) => {
-    setSelectedTemplate(temp);
-  };
+  // const handleTemplateSelection = (temp) => {
+  //   setSelectedTemplate(temp);
+  // };
 
   const ColorChange1 = (event) => {
     setColor1(event.target.value);
@@ -145,18 +145,20 @@ const ConfigEditor = () => {
       userID: userId
     };
 
-    // endpoint URL  backend
-    const endpoint = '34.209.99.170';
+    localStorage.setItem('templateData', JSON.stringify(templateData));
+    alert('Template saved successfully!');
+    // // endpoint URL  backend
+    // const endpoint = '34.209.99.170';
 
-    // Send a POST request to the backend
-    try {
-      const response = await axios.post(endpoint, templateData);
-      console.log(response.data);
-      alert('Template saved successfully!');
-    } catch (error) {
-      console.error('Error saving template:', error);
-      alert('Failed to save template.');
-    }
+    // // Send a POST request to the backend
+    // try {
+    //   const response = await axios.post(endpoint, templateData);
+    //   console.log(response.data);
+    //   alert('Template saved successfully!');
+    // } catch (error) {
+    //   console.error('Error saving template:', error);
+    //   alert('Failed to save template.');
+    // }
 
   };
 
@@ -176,12 +178,13 @@ const ConfigEditor = () => {
     img.src = URL.createObjectURL(file);
     if (teamNum === 1) {
       setHImage(img.src);
+      handleSportSelection(selectedSport);
     } else {
       setVImage(img.src);
+      handleSportSelection(selectedSport);
     }
     const fileInput = document.getElementById(`team${teamNum}ImageInput`);
     fileInput.previousSibling.textContent = file.name; // Changes the text of the button to the file name
-    handleSportSelection(selectedSport);
   };
 
   const handleFileUploadClick = (teamNum) => {
@@ -190,14 +193,28 @@ const ConfigEditor = () => {
   };
 
   // Slight modification to Hunters function to allow color changes
+  const loadTemplate = (templateName) => {
+    const savedData = localStorage.getItem('templateData');
+    if (savedData) {
+      const templateData = JSON.parse(savedData);
+      setColor1(templateData.color1);
+      setColor2(templateData.color2);
+      setSelectedSport(templateData.sport);
+      // Updat e the Scoreboard
+      handleSportSelection(templateData.sport);
+      setSelectedTemplate(templateName);
 
+    } else {
+      alert('No saved template found.');
+    }
+  };
 
   // Spagehtti Code Incoming
   return (
     <View className="App">
       <div className="sticky">
         <Card>
-          <h1>Template Editor</h1>
+          <h1>Scoreboard Editor</h1>
         </Card>
 
         <div className="ButtonContainer">
@@ -227,15 +244,20 @@ const ConfigEditor = () => {
             <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
           )}
 
-          <button className="fileUploadBtn" onClick={() => handleFileUploadClick(2)}>
-            Upload File
-          </button>
           <input
             id="team2ImageInput"
             type="file"
-            className="hiddenFileInput"
+            style={{ display: "none" }}
             onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
           />
+          <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
+            {team2Image ? team2Image.name : "Upload File"}
+          </button>
+          {team2Image && (
+            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image" />
+          )}
+
+
 
           {team2Image && (
             <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
@@ -261,15 +283,14 @@ const ConfigEditor = () => {
           {/* This Button is for grabbing the users old saved templates to remodify */}
           {/* Will need somewhere to delete templates maybe? */}
           <Menu
-            trigger={
-              <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
-                {selectedTemplate}
-              </MenuButton>
-            }
-          >
-            <MenuItem onClick={() => handleTemplateSelection("Template 1")}>Saved Template 1</MenuItem>
-            <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
-          </Menu>
+              trigger={
+                <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
+                  {selectedTemplate}
+                </MenuButton>
+              }
+            >
+              <MenuItem onClick={loadTemplate}>Saved Scoreboards</MenuItem>
+            </Menu>
 
           <div className="container3">
             <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
