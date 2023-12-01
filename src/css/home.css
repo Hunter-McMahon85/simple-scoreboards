@@ -51,18 +51,23 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* width: 50%;  */
   align-items: center;
   text-align: center;
 }
+
 .full-width-container {
   background-color: #E4F4F3;
+}
+
+.full-width-container li {
+  text-align: left;
 }
 
 .about h1{
   text-align: center;
   color: black;
-
+  background-color: #60a19d62;
+  width: 100%;
 }
 
 .about-desc {
@@ -70,7 +75,7 @@ a:hover {
   margin: 0;
   text-align: center;
   word-wrap: break-word;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 .broadcast-button {

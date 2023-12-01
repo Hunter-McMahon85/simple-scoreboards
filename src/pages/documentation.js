@@ -6,9 +6,14 @@ import "../css/documentation.css";
 const documentation = () => {
   return (
     <>
-      <div>
-        <div>
-          <h1>Getting Started:</h1>
+      <div className="docbody">
+        <Link to="/">
+            <button className="SObutton">
+              Home
+            </button>
+        </Link>
+        <h1>Getting Started:</h1>
+        <div className="doccontent">
           <p>
             This guide will get you set up to use simple scoreboards overlays to broadcast your sporting events
           </p>
@@ -32,6 +37,7 @@ const documentation = () => {
               OBS and you will be able to start a scorekeeping session
             </li>
           </ul>
+          <img src="../../../InstructionImg/docks.PNG" alt="docks" width="300" height="300"></img>
           <div className="dock_images"></div>
           <h2>Before You Broadcast</h2>
           <ul>
@@ -82,11 +88,6 @@ const documentation = () => {
             Scoreboards Overlay
           </p>
           <br></br>
-          <Link to="/">
-            <button className="SObutton">
-              Home
-            </button>
-          </Link>
         </div>
       </div>
     </>

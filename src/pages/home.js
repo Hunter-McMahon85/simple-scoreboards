@@ -38,7 +38,7 @@ const landing = () => {
             own sports broadcast!
           </p>
           <Link to="/usingsimplescoreboards">
-            <button className="broadcast-button">Learn How To Use Simple Scoreboard Overlays Here</button>
+            <button className="broadcast-button">Setup Documentation</button>
           </Link>
           <h2>Sports with Simple Scoreboard Overlays:</h2>
           <ul>
@@ -46,10 +46,6 @@ const landing = () => {
             <li>Basketball</li>
             <li>Baseball/Softball</li>
             <li>Soccer</li>
-            <li>Hockey</li>
-            <li>Volleyball</li>
-            <li>Rugby</li>
-            <li>Cricket</li>
           </ul>
         </div>
     

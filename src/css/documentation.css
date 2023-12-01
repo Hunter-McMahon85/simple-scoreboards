@@ -1,0 +1,28 @@
+.docbody{
+    background-color: lightblue;
+}
+
+.docbody h1 {
+    width: 100vw;
+    text-align: center;
+    background-color: #60a19d62;
+    margin: 0;
+    padding: 0;
+}
+
+.docbody button {
+    position: fixed;
+    top: 0; 
+    right: 0; 
+    margin: 10px;
+}
+
+.doccontent {
+    padding: 0px 0px 0px 20px;
+    margin-right: 90px;
+}
+
+.doccontent a {
+    color: coral;
+}
+
