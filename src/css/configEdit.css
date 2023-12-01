@@ -6,6 +6,7 @@
 h1 {
   margin: 0;
   font-size: 5rem;
+  font-family:'Franklin Gothic Medium';
   color: black;
   font-weight: 200;
   font-style: normal;
@@ -19,7 +20,9 @@ h1 {
   width: 100vw;
 }
 
-.container3 {
+.templateSave {
+  position: relative;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -45,6 +48,7 @@ h1 {
   right: 10px;
   display: flex;
   gap: 10px;
+  z-index: 10; 
 }
 
 .homeButton {
@@ -94,8 +98,9 @@ h1 {
 }
 
 .customMenuButton {
-  max-width: 10%;
+  max-width: 200px;
   margin-right: 1%;
+  flex-grow: 2;
   display: flex;
   gap: 10px;
 }

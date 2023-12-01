@@ -14,7 +14,7 @@ function SessionStart({ onClose }) {
         <div className="SessionCreator">
           <h1>Choose A Sport</h1>
           <Link to="/myscorekeeper">
-            <button
+            <button className="SportPopupButton"
               onClick={() => {
                 Board_Choice("FBSlim");
               }}
@@ -23,7 +23,7 @@ function SessionStart({ onClose }) {
             </button>
           </Link>
           <Link to="/myscorekeeper">
-            <button
+            <button className="SportPopupButton"
               onClick={() => {
                 Board_Choice("Soccer");
               }}
@@ -32,7 +32,7 @@ function SessionStart({ onClose }) {
             </button>
           </Link>
           <Link to="/myscorekeeper">
-            <button
+            <button className="SportPopupButton"
               onClick={() => {
                 Board_Choice("Baseball");
               }}
@@ -41,7 +41,7 @@ function SessionStart({ onClose }) {
             </button>
           </Link>
           <br></br>
-          <button onClick={onClose}>Close</button>
+          <button className="ClosePopupButton" onClick={onClose}>Close</button>
         </div>
       </div>
     </>

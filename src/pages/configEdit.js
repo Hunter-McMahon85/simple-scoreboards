@@ -36,7 +36,7 @@ const ConfigEditor = () => {
   const [color1, setColor1] = useState("#90ee90");
   const [color2, setColor2] = useState("#90ee90");
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
-  const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
+  const [selectedTemplate, setSelectedTemplate] = useState("Saved Scoreboards");
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
 
   const handleSportSelection = (sport) => {
@@ -114,8 +114,8 @@ const ConfigEditor = () => {
       userID: userId
     };
 
-    // endpoint URL  backend
-    const endpoint = 'ec2-34-209-99-170.us-west-2.compute.amazonaws.com';
+  // endpoint URL  backend
+  const endpoint = '34.209.99.170'; 
 
     // Send a POST request to the backend
     try {
@@ -189,18 +189,19 @@ const ConfigEditor = () => {
             <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
           )}
 
-          <input
-            id="team2ImageInput"
-            type="file"
-            style={{ display: "none" }}
-            onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
-          />
-          <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
-            {team2Image ? team2Image.name : "Upload File"}
-          </button>
-          {team2Image && (
-            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
-          )}
+      <button className="fileUploadBtn" onClick={() => handleFileUploadClick(1)}>
+          Upload File
+        </button>
+        <input
+          id="team2ImageInput"
+          type="file"
+          className="hiddenFileInput"
+          onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
+        />
+
+        {team2Image && (
+          <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
+        )}
 
           {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
         Its sorta responsive 
@@ -239,6 +240,7 @@ const ConfigEditor = () => {
       <div>
         {SBComponent}
       </div>
+
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}
