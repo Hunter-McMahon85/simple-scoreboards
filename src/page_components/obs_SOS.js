@@ -25,12 +25,11 @@ function StartMsg({ onClose }) {
                         <li>
                             in the URL field, enter the link
                             "simplescoreboards.com/myscoreboard". Then, make sure the width
-                            and heigh fields match your intended stream output resoultion (i.e
+                            and height fields match your intended stream output resoultion (i.e
                             width = 1080, height = 1920 for 1080p). Also make sure that the
                             Custom CSS field is empty (OBS will automatically populate this
                             with some styles). The element you add will initially show up as
-                            empty but do not worry as it will populate with your scoreboard at
-                            the start of a session.
+                            empty. To display your scoreboard, simply refresh the page.
                         </li>
                         <li>
                             Then, in the sources tab, right click on "scoreboard", then on

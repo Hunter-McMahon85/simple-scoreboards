@@ -176,13 +176,12 @@ const ConfigEditor = () => {
     img.src = URL.createObjectURL(file);
     if (teamNum === 1) {
       setHImage(img.src);
-      handleSportSelection(selectedSport);
     } else {
       setVImage(img.src);
-      handleSportSelection(selectedSport);
     }
     const fileInput = document.getElementById(`team${teamNum}ImageInput`);
     fileInput.previousSibling.textContent = file.name; // Changes the text of the button to the file name
+    handleSportSelection(selectedSport);
   };
 
   const handleFileUploadClick = (teamNum) => {

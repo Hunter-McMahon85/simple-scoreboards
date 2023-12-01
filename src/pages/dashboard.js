@@ -38,7 +38,7 @@ const Dashboard = () => {
         {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
       </>
     );
-    sos_buttxt = "Launch a Session";
+    sos_buttxt = "Launch a Demo Session";
   }
 
   const Nav = useNavigate();

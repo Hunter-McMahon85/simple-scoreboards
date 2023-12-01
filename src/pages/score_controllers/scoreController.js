@@ -6,6 +6,7 @@ import FBScorekeeper from "./FB_controller";
 import SoccerScorekeeper from "./Soccer_Controller";
 import BaseballController from "./Basball_Controller";
 import BasketScorekeeper from "./BasketballController";
+import copy from 'clipboard-copy';
 
 /*
 Vars and Functions in Scorekeeper:
@@ -232,6 +233,12 @@ const ScoreController = () => {
       break;
   }
 
+  const HandleCpy = () => {
+    let textToCopy = "simplescoreboards.com/myscoreboard"
+    copy(textToCopy);
+    alert(`Link to the scoreboard, ${textToCopy}, is copied to your clipboard. Add it to OBS as a browser source in the sources tab to get started scorekeeping`);
+  };
+
   return (
     <>
       <div>
@@ -240,8 +247,9 @@ const ScoreController = () => {
           <Link to="/mydashboard">
             <button onClick={() => StopClock()}>End Session</button>
           </Link>
-          <br/>
-          <p>Scoreboard not showing? make sure to add simplescoreboards.com/myscoreboard as a browser source in the OBS sources tab and refresh. </p>
+          <p className="cpy" onClick={() => HandleCpy()}>
+            Scoreboard not showing? make sure to add <b>simplescoreboards.com/myscoreboard</b> as a browser source in the OBS sources tab and refresh.
+          </p>
         </div>
       </div>
     </>

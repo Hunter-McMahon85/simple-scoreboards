@@ -13,8 +13,8 @@ const Scorekeeper = () => {
   };
   return (
     <>
-      {ShowStartMSG && <StartMsg onClose={handleCloseMSG} />}
       <ScoreController/>
+      {ShowStartMSG && <StartMsg onClose={handleCloseMSG} />}
     </>
   );
 };
