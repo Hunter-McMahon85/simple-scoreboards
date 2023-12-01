@@ -1,13 +1,14 @@
 .dash_body {
-  background-color: #bfd7ed;
+  background-color: #bfebed;
   height: 100vh;
   min-width: 100vw;
   overflow: auto;
 }
 
 .SObutton {
-  color: white;
-  background-color: red;
+  color: black;
+  background-color: lightcoral;
+  border: 2px solid #e64040;
   padding: 6px 20px;
   border-radius: 15px;
   cursor: pointer;
@@ -15,23 +16,66 @@
   margin-right: 5px;
 }
 
+.SObutton:hover {
+  background-color: #e64040;
+}
+
 .PresetCreatorButton {
   color: black;
-  background-color: lightblue;
+  background-color: #00b6bc;
+  border: 2px solid #00a0b0;
   padding: 6px 20px;
   border-radius: 15px;
   cursor: pointer;
   margin-left: 5px;
 }
 
+.PresetCreatorButton:hover {
+  background-color: #00a0b0;
+}
+
 .StartSessionButton {
   color: black;
   background-color: lightgreen;
+  border: 2px solid #41d941;
   padding: 6px 20px;
   border-radius: 15px;
   cursor: pointer;
   margin-left: 5px;
 }
+
+.StartSessionButton:hover {
+  background-color: #41d941;
+}
+
+.SportPopupButton {
+  color: black;
+  background-color: white;
+  border: 2px solid #aaaaaa;
+  padding: 6px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.SportPopupButton:hover {
+  background-color: #aaaaaa;
+}
+
+.ClosePopupButton {
+  color: black;
+  background-color: lightcoral;
+  border: 2px solid #e64040;
+  padding: 6px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.ClosePopupButton:hover {
+  background-color: #e64040;
+}
+
 
 .PresetTile {
   color: black;
@@ -40,6 +84,7 @@
   border-radius: 15px;
   width: 320px;
   height: 180px;
+
 }
 
 .dash_body h1 {
