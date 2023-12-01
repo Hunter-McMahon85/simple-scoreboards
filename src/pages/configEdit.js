@@ -108,24 +108,24 @@ const ConfigEditor = () => {
     const templateData = {
       color1: color1,
       color2: color2,
-      image1: "temp1", 
-      image2: "temp2", 
+      image1: "temp1",
+      image2: "temp2",
       sport: selectedSport,
       userID: userId
     };
 
-  // endpoint URL  backend
-  const endpoint = 'ec2-34-209-99-170.us-west-2.compute.amazonaws.com'; 
+    // endpoint URL  backend
+    const endpoint = 'ec2-34-209-99-170.us-west-2.compute.amazonaws.com';
 
-  // Send a POST request to the backend
-  try {
-    const response = await axios.post(endpoint, templateData);
-    console.log(response.data); 
-    alert('Template saved successfully!');
-  } catch (error) {
-    console.error('Error saving template:', error);
-    alert('Failed to save template.');
-  }
+    // Send a POST request to the backend
+    try {
+      const response = await axios.post(endpoint, templateData);
+      console.log(response.data);
+      alert('Template saved successfully!');
+    } catch (error) {
+      console.error('Error saving template:', error);
+      alert('Failed to save template.');
+    }
 
   };
 
@@ -157,91 +157,91 @@ const ConfigEditor = () => {
   // Spagehtti Code Incoming
   return (
     <View className="App">
-      <Card>
-        <h1>Template Editor</h1>
-      </Card>
+      <div className="sticky">
+        <Card>
+          <h1>Template Editor</h1>
+        </Card>
 
-      <div className="ButtonContainer">
-        <Link to="/mydashboard">
-          <Button className="homeButton">Home</Button>
-        </Link>
-        <Button className="signout" onClick={signOut}>Sign Out</Button>
-      </div>
+        <div className="ButtonContainer">
+          <Link to="/mydashboard">
+            <Button className="homeButton">Home</Button>
+          </Link>
+          <Button className="signout" onClick={signOut}>Sign Out</Button>
+        </div>
 
-      <div className="Sidebar">
-        {/* Two colors */}
-        <input className="colorPicker" type="color" value={color1} onChange={ColorChange1} />
-        <input className="colorPicker" type="color" value={color2} onChange={ColorChange2} />
+        <div className="Sidebar">
+          {/* Two colors */}
+          <input className="colorPicker" type="color" value={color1} onChange={ColorChange1} />
+          <input className="colorPicker" type="color" value={color2} onChange={ColorChange2} />
 
-        {/* Button press to upload the user image for the teams */}
-        {/* Temporarily displaying it in the bottom corners */}
-        <input
-          id="team1ImageInput"
-          type="file"
-          style={{ display: "none" }}
-          onChange={(e) => handleImageUpload(e, setTeam1Image, 1)}
-        />
-        <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
-          {team1Image ? team1Image.name : "Upload File"}
-        </button>
-        {team1Image && (
-          <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
-        )}
+          {/* Button press to upload the user image for the teams */}
+          {/* Temporarily displaying it in the bottom corners */}
+          <input
+            id="team1ImageInput"
+            type="file"
+            style={{ display: "none" }}
+            onChange={(e) => handleImageUpload(e, setTeam1Image, 1)}
+          />
+          <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
+            {team1Image ? team1Image.name : "Upload File"}
+          </button>
+          {team1Image && (
+            <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
+          )}
 
-        <input
-          id="team2ImageInput"
-          type="file"
-          style={{ display: "none" }}
-          onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
-        />
-        <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
-          {team2Image ? team2Image.name : "Upload File"}
-        </button>
-        {team2Image && (
-          <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
-        )}
+          <input
+            id="team2ImageInput"
+            type="file"
+            style={{ display: "none" }}
+            onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
+          />
+          <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
+            {team2Image ? team2Image.name : "Upload File"}
+          </button>
+          {team2Image && (
+            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
+          )}
 
-        {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
+          {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
         Its sorta responsive 
         Choice of sports will eventually change which scoreboard pops up to let the user modify it
         Will probably have to redo the code a lot if I'm imagining what might happen right */}
-        <Menu
-          trigger={
-            <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
-              {selectedSport}
-            </MenuButton>
-          }
-        >
-          <MenuItem onClick={() => handleSportSelection("Football")}>Football</MenuItem>
-          <MenuItem onClick={() => handleSportSelection("Soccer")}>Soccer</MenuItem>
-          <MenuItem onClick={() => handleSportSelection("Baseball")}>Baseball/Softball</MenuItem>
-        </Menu>
+          <Menu
+            trigger={
+              <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
+                {selectedSport}
+              </MenuButton>
+            }
+          >
+            <MenuItem onClick={() => handleSportSelection("Football")}>Football</MenuItem>
+            <MenuItem onClick={() => handleSportSelection("Soccer")}>Soccer</MenuItem>
+            <MenuItem onClick={() => handleSportSelection("Baseball")}>Baseball/Softball</MenuItem>
+          </Menu>
 
-        {/* This Button is for grabbing the users old saved templates to remodify */}
-        {/* Will need somewhere to delete templates maybe? */}
-        <Menu
-          trigger={
-            <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
-              {selectedTemplate}
-            </MenuButton>
-          }
-        >
-          <MenuItem onClick={() => handleTemplateSelection("Template 1")}>Saved Template 1</MenuItem>
-          <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
-        </Menu>
+          {/* This Button is for grabbing the users old saved templates to remodify */}
+          {/* Will need somewhere to delete templates maybe? */}
+          <Menu
+            trigger={
+              <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
+                {selectedTemplate}
+              </MenuButton>
+            }
+          >
+            <MenuItem onClick={() => handleTemplateSelection("Template 1")}>Saved Template 1</MenuItem>
+            <MenuItem onClick={() => handleTemplateSelection("Template 2")}>Saved Template 2</MenuItem>
+          </Menu>
+
+          <div className="container3">
+            <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
+          </div>
+        </div>
       </div>
-
       <div>
         {SBComponent}
       </div>
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}
-      <div className="container3">
-        <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
-      </div>
-
-
     </View>
   );
 };

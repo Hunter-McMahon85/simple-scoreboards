@@ -1,7 +1,7 @@
 // component for users choose a session to start or edit a scoreboard
 import React, { useState } from "react";
 import { Auth } from "aws-amplify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SessionStart from "../page_components/session_config";
 import SeshSetup from "../page_components/obs_instructions";
 import "../css/dashboard.css";
@@ -39,6 +39,19 @@ const Dashboard = () => {
     );
   }
 
+  const Nav = useNavigate();
+  const userPreset = undefined;
+
+  const handleClick = (arg1, arg2) => {
+    if (userPreset === undefined) {
+
+      Nav('/presetcreator');
+      return;
+    }
+    console.log(arg1, arg2)
+    Nav('/myscorekeeper');
+  };
+
   return (
     <>
       <div className="dash_body">
@@ -65,11 +78,17 @@ const Dashboard = () => {
           <h3>Saved Presets </h3>
 
           {/* add source for image within the buttons */}
-          <button className="PresetTile">1</button>
+          <div className="preButcontain">
+            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>1 sport <br/> team1 vs. team2</button>
 
-          <button className="PresetTile">2</button>
+            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>2 sport <br/> team1 vs. team2</button>
 
-          <button className="PresetTile">3</button>
+            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>3 sport <br/> team1 vs. team2</button>
+
+            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>4 sport <br/> team1 vs. team2</button>
+
+            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>5 sport <br/> team1 vs. team2</button>
+          </div>
         </div>
       </div>
       {popup}
