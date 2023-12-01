@@ -24,6 +24,7 @@
 
 .homeButton {
     background-color: #466b99;
+    outline: 2px solid #1F2B3F;
     color: white;
     font-size: 1.2rem;
     padding: 10px 20px;
@@ -36,7 +37,7 @@
   }
 
 .doccontent a {
-    color: coral;
+    color: #466b99;
 }
 
 .docksImage {
