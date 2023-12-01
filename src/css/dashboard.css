@@ -16,13 +16,22 @@
   margin-left: 5px;
 }
 
+.PresetCreatorButton:hover {
+  background-color: #00a0b0;
+}
+
 .PresetTile {
   color: black;
   background-color: white;
-  border: 4px solid black;
+  border: 4px solid #aaaaaa;
   border-radius: 15px;
   width: 320px;
   height: 180px;
+  cursor: pointer;
+}
+
+.PresetTile:hover {
+  background-color: #aaaaaa;
 }
 
 .dash_body h1 {
