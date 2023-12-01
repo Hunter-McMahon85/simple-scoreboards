@@ -26,12 +26,14 @@ const Baseball = ({
             <div className="baseball_Container">
                 <div className="baseball_items">
                     <div className="teams">
-                        <h1 className="team" style={home_color}>
-                            home
-                        </h1>
-                        <h1 className="team" style={vis_color}>
-                            Visitor
-                        </h1>
+                        <div className="basehteam">
+                            <img src="../../../logo192.png" alt="" width="52" height="52" />
+                            <h1 className="team" style={home_color}> home </h1>
+                        </div>
+                        <div className="basevteam">
+                            <img src="../../../logo192.png" alt="" width="52" height="52" />
+                            <h1 className="team" style={vis_color}> Visitor </h1>
+                        </div>
                     </div>
                     <div className="scores">
                         <h1 className="score"> {H_score} </h1>

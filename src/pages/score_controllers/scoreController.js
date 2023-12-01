@@ -143,29 +143,27 @@ const ScoreController = () => {
   let strikes = 0;
   let balls = 0;
   localStorage.setItem("Strikes", strikes);
-  localStorage.setItem("Balls", balls); 
-  function pitch_res(t, x)
-  {
-    switch(t)
-    {
+  localStorage.setItem("Balls", balls);
+  function pitch_res(t, x) {
+    switch (t) {
       case "b":
         balls = x;
-        localStorage.setItem("Balls", balls); 
+        localStorage.setItem("Balls", balls);
         break;
       case "s":
         strikes = x;
         localStorage.setItem("Strikes", strikes);
         break;
       default:
-      break;
+        break;
     }
   }
 
   let possetion = "";
-  localStorage.setItem("Possetion", possetion); 
+  localStorage.setItem("Possetion", possetion);
   function Change_Pos(t) {
     possetion = t;
-    localStorage.setItem("Possetion", possetion); 
+    localStorage.setItem("Possetion", possetion);
   }
   // in the following, we will have multiple elements like FBScorekeeper
   // TODO: create more sports templates and setup conditional rendering
@@ -183,8 +181,8 @@ const ScoreController = () => {
           StopClock={StopClock}
           DefDistance={DefDistance}
           DefDown={DefDown}
-          hcolor={"#EC755C"}
-          vcolor={"#EC755C"}
+          hcolor={"#blue"}
+          vcolor={"red"}
         />
       );
       break;
@@ -225,12 +223,11 @@ const ScoreController = () => {
       <div>
         <div>{ScoreKeeperComponent}</div>
         <div className="SeshEnd">
-          <Link to="/myscoreboard">
-            <button>go to scoreboard</button>
-          </Link>
           <Link to="/mydashboard">
             <button>End Session</button>
           </Link>
+          <br/>
+          <p>Scoreboard not showing? make sure to add simplescoreboards.com/myscoreboard as a browser source in the OBS sources tab and refresh. </p>
         </div>
       </div>
     </>

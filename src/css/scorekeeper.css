@@ -57,6 +57,32 @@
   margin-top: 20px;
 }
 
+.Soscontain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sos {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%;
+  height: auto;
+}
+
+.SessionCreator ul {
+  text-align: left;
+}
+
 @media (max-width: 760px) {
   .teams {
     display: flex;
