@@ -181,7 +181,7 @@ const ScoreController = () => {
           StopClock={StopClock}
           DefDistance={DefDistance}
           DefDown={DefDown}
-          hcolor={"#blue"}
+          hcolor={"blue"}
           vcolor={"red"}
         />
       );

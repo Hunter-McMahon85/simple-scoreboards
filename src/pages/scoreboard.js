@@ -56,6 +56,10 @@ const Scoreboard = () => {
           Distance={Distance}
           hcolor={"blue"}
           vcolor={"red"}
+          himage={"../../../logo192.png"}
+          vimage={"../../../logo192.png"}
+          hname = {"home team"}
+          vname = {"visiting team"}
         />
       );
       break;
@@ -68,6 +72,10 @@ const Scoreboard = () => {
           Time={Time}
           hcolor={"blue"}
           vcolor={"red"}
+          himage={"../../../logo192.png"}
+          vimage={"../../../logo192.png"}
+          hname = {"home team"}
+          vname = {"visiting team"}
         />
       );
       break;
@@ -83,6 +91,10 @@ const Scoreboard = () => {
           Possetion={Possetion}
           hcolor={"blue"}
           vcolor={"red"}
+          himage={"../../../logo192.png"}
+          vimage={"../../../logo192.png"}
+          hname = {"home team"}
+          vname = {"visiting team"}
         />
       );
       break;

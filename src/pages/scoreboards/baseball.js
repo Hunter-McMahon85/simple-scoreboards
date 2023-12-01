@@ -12,6 +12,10 @@ const Baseball = ({
     Possetion,
     hcolor,
     vcolor,
+    himage,
+    vimage,
+    hname,
+    vname, 
 }) => {
     const home_color = {
         backgroundColor: hcolor,
@@ -27,12 +31,12 @@ const Baseball = ({
                 <div className="baseball_items">
                     <div className="teams">
                         <div className="basehteam">
-                            <img src="../../../logo192.png" alt="" width="52" height="52" />
-                            <h1 className="team" style={home_color}> home </h1>
+                            <img src={himage} alt="" width="52" height="52" />
+                            <h1 className="team" style={home_color}> {hname}  </h1>
                         </div>
                         <div className="basevteam">
-                            <img src="../../../logo192.png" alt="" width="52" height="52" />
-                            <h1 className="team" style={vis_color}> Visitor </h1>
+                            <img src={vimage} alt="" width="52" height="52" />
+                            <h1 className="team" style={vis_color}> {vname} </h1>
                         </div>
                     </div>
                     <div className="scores">

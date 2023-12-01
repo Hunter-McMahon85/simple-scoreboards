@@ -38,6 +38,8 @@ const ConfigEditor = () => {
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
   const [selectedTemplate, setSelectedTemplate] = useState("Saved Scoreboards");
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
+  const [HImage, setHImage] = useState("../../../logo192.png");
+  const [VImage, setVImage] = useState("../../../logo192.png");
 
   const handleSportSelection = (sport) => {
     setSelectedSport(sport);
@@ -53,6 +55,10 @@ const ConfigEditor = () => {
             Distance={10}
             hcolor={color1}
             vcolor={color2}
+            himage={HImage}
+            vimage={VImage}
+            hname={"home team"}
+            vname={"visiting team"}
           />
         );
         break;
@@ -65,6 +71,10 @@ const ConfigEditor = () => {
             Time={"00:00"}
             hcolor={color1}
             vcolor={color2}
+            himage={HImage}
+            vimage={VImage}
+            hname={"home team"}
+            vname={"visiting team"}
           />
         );
         break;
@@ -80,6 +90,10 @@ const ConfigEditor = () => {
             Possetion={"T"}
             hcolor={color1}
             vcolor={color2}
+            himage={HImage}
+            vimage={VImage}
+            hname={"home team"}
+            vname={"visiting team"}
           />
         );
         break;
@@ -114,8 +128,8 @@ const ConfigEditor = () => {
       userID: userId
     };
 
-  // endpoint URL  backend
-  const endpoint = '34.209.99.170'; 
+    // endpoint URL  backend
+    const endpoint = '34.209.99.170';
 
     // Send a POST request to the backend
     try {
@@ -143,12 +157,20 @@ const ConfigEditor = () => {
       }
     };
     img.src = URL.createObjectURL(file);
+    if (teamNum === 1) {
+      setHImage(img.src);
+      handleSportSelection(selectedSport);
+    } else {
+      setVImage(img.src);
+      handleSportSelection(selectedSport);
+    }
     const fileInput = document.getElementById(`team${teamNum}ImageInput`);
     fileInput.previousSibling.textContent = file.name; // Changes the text of the button to the file name
   };
 
   const handleFileUploadClick = (teamNum) => {
     document.getElementById(`team${teamNum}ImageInput`).click();
+    handleSportSelection(selectedSport);
   };
 
   // Slight modification to Hunters function to allow color changes
@@ -189,19 +211,19 @@ const ConfigEditor = () => {
             <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
           )}
 
-      <button className="fileUploadBtn" onClick={() => handleFileUploadClick(1)}>
-          Upload File
-        </button>
-        <input
-          id="team2ImageInput"
-          type="file"
-          className="hiddenFileInput"
-          onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
-        />
+          <button className="fileUploadBtn" onClick={() => handleFileUploadClick(2)}>
+            Upload File
+          </button>
+          <input
+            id="team2ImageInput"
+            type="file"
+            className="hiddenFileInput"
+            onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
+          />
 
-        {team2Image && (
-          <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
-        )}
+          {team2Image && (
+            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
+          )}
 
           {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
         Its sorta responsive 

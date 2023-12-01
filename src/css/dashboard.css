@@ -1,23 +1,9 @@
-.dash_body {
-  background-color: #bfebed;
-  height: 100vh;
-  min-width: 100vw;
-  overflow: auto;
-}
-
-.SObutton {
-  color: black;
-  background-color: lightcoral;
-  border: 2px solid #e64040;
-  padding: 6px 20px;
-  border-radius: 15px;
-  cursor: pointer;
-  float: right;
-  margin-right: 5px;
-}
-
-.SObutton:hover {
-  background-color: #e64040;
+.dash_body
+{
+    background-color: #bfd7ed;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
 }
 
 .PresetCreatorButton {
@@ -30,8 +16,21 @@
   margin-left: 5px;
 }
 
-.PresetCreatorButton:hover {
-  background-color: #00a0b0;
+.PresetTile {
+  color: black;
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 15px;
+  width: 320px;
+  height: 180px;
+}
+
+.dash_body h1 {
+    text-align: center;
+}
+
+.user_presets {
+    text-align: center;
 }
 
 .StartSessionButton {
@@ -46,6 +45,18 @@
 
 .StartSessionButton:hover {
   background-color: #41d941;
+}
+
+.SObutton {
+  color: white;
+  background-color: red;
+  background-color: lightcoral;
+  border: 2px solid #e64040;
+  padding: 6px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  float: right;
+  margin-right: 5px;
 }
 
 .SportPopupButton {
@@ -76,7 +87,6 @@
   background-color: #e64040;
 }
 
-
 .PresetTile {
   color: black;
   background-color: lightgrey;
@@ -94,8 +104,6 @@
 .user_presets {
   text-align: center;
 }
-
-.PrepreButcontain
 
 /*styling for popups for session start/obs setup instructions*/
 .SCcontain {

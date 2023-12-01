@@ -27,16 +27,18 @@ const Dashboard = () => {
 
   let popup = (
     <>
-      {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}
-      {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
+      {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}   
+      {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}  
     </>
   );
+  let sos_buttxt = "How to Set up with OBS";
   if (typeof obsstudio !== "undefined") {
     popup = (
       <>
         {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}
       </>
     );
+    sos_buttxt = "launch a Demo Session";
   }
 
   const Nav = useNavigate();
@@ -71,7 +73,7 @@ const Dashboard = () => {
 
         <button onClick={handleopenSessionStart} className="StartSessionButton"
          title="Start a scorekeeping session">
-          Start Session
+          {sos_buttxt}
         </button>
 
         <div className="user_presets">

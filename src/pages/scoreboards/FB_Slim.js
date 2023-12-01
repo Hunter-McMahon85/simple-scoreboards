@@ -10,6 +10,10 @@ const FBSlim = ({
   Distance,
   hcolor,
   vcolor,
+  himage, 
+  vimage, 
+  hname, 
+  vname
 }) => {
   const home_color = {
     backgroundColor: hcolor,
@@ -18,17 +22,16 @@ const FBSlim = ({
     backgroundColor: vcolor,
   };
 
-  const prod_img = "../../../logo192.png";
   return (
     <>
       <div className="FB_Slim_Container">
         <div className="FB_Slim_items">
-          <img src={prod_img} alt="" height="56px" width="56px" />
-          <h1 style={home_color}>Home Team</h1>
+          <img src={himage} alt="" height="56px" width="56px" />
+          <h1 style={home_color}>{hname}</h1>
           <h1 className="FBscore">{H_score}</h1>
 
-          <img src={prod_img} alt="" height="56x" width="56px"/>
-          <h1 style={vis_color}>Visiting Team</h1>
+          <img src={vimage} alt="" height="56x" width="56px"/>
+          <h1 style={vis_color}>{vname}</h1>
           <h1 className="FBscore">{V_score}</h1>
           <h1 className="FBsit"> Quarter {Period} </h1>
           <h1 className="FBsit">{Time}</h1>
