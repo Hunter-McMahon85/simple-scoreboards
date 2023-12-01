@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";
+import Basketball from "./scoreboards/basketball";
 
 const Scoreboard = () => {
   // Initialize data
@@ -58,8 +59,8 @@ const Scoreboard = () => {
           vcolor={"red"}
           himage={"../../../logo192.png"}
           vimage={"../../../logo192.png"}
-          hname = {"home team"}
-          vname = {"visiting team"}
+          hname={"home team"}
+          vname={"visiting team"}
         />
       );
       break;
@@ -74,8 +75,8 @@ const Scoreboard = () => {
           vcolor={"red"}
           himage={"../../../logo192.png"}
           vimage={"../../../logo192.png"}
-          hname = {"home team"}
-          vname = {"visiting team"}
+          hname={"home team"}
+          vname={"visiting team"}
         />
       );
       break;
@@ -93,8 +94,24 @@ const Scoreboard = () => {
           vcolor={"red"}
           himage={"../../../logo192.png"}
           vimage={"../../../logo192.png"}
-          hname = {"home team"}
-          vname = {"visiting team"}
+          hname={"home team"}
+          vname={"visiting team"}
+        />
+      );
+      break;
+    case "Basketball":
+      ScoreboardComponent = (
+        <Basketball
+          H_score={H_score}
+          V_score={V_score}
+          Period={Period}
+          Time={Time}
+          hcolor={"blue"}
+          vcolor={"red"}
+          himage={"../../../logo192.png"}
+          vimage={"../../../logo192.png"}
+          hname={"home team"}
+          vname={"visiting team"}
         />
       );
       break;

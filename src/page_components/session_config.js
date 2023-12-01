@@ -40,6 +40,15 @@ function SessionStart({ onClose }) {
               Baseball
             </button>
           </Link>
+          <Link to="/myscorekeeper">
+            <button className="SportPopupButton"
+              onClick={() => {
+                Board_Choice("Basketball");
+              }}
+            >
+              Basketball
+            </button>
+          </Link>
           <br></br>
           <button className="ClosePopupButton" onClick={onClose}>Close</button>
         </div>

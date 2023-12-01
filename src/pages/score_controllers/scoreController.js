@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import FBScorekeeper from "./FB_controller";
 import SoccerScorekeeper from "./Soccer_Controller";
 import BaseballController from "./Basball_Controller";
+import BasketScorekeeper from "./BasketballController";
 
 /*
 Vars and Functions in Scorekeeper:
@@ -213,6 +214,19 @@ const ScoreController = () => {
         />
       );
       break;
+    case "Basketball":
+      ScoreKeeperComponent = (
+        <BasketScorekeeper
+          U_score={U_score}
+          Change_Period={Change_Period}
+          ResetTime={ResetTime}
+          DecrementTime={DecrementTime}
+          StopClock={StopClock}
+          hcolor={"blue"}
+          vcolor={"red"}
+        />
+      );
+      break;
     default:
       ScoreKeeperComponent = null;
       break;
@@ -224,7 +238,7 @@ const ScoreController = () => {
         <div>{ScoreKeeperComponent}</div>
         <div className="SeshEnd">
           <Link to="/mydashboard">
-            <button>End Session</button>
+            <button onClick={() => StopClock()}>End Session</button>
           </Link>
           <br/>
           <p>Scoreboard not showing? make sure to add simplescoreboards.com/myscoreboard as a browser source in the OBS sources tab and refresh. </p>

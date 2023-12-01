@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify";
 import "../css/configEdit.css";
 import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
+import axios from 'axios';
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";
-import axios from 'axios';
+import Basketball from "./scoreboards/basketball";
 
 async function signOut() {
   try {
@@ -88,6 +89,22 @@ const ConfigEditor = () => {
             Balls={3}
             Strikes={2}
             Possetion={"T"}
+            hcolor={color1}
+            vcolor={color2}
+            himage={HImage}
+            vimage={VImage}
+            hname={"home team"}
+            vname={"visiting team"}
+          />
+        );
+        break;
+        case "Basketball":
+        setSBComponent(
+          <Basketball
+            H_score={10}
+            V_score={10}
+            Period={1}
+            Time={"00:00"}
             hcolor={color1}
             vcolor={color2}
             himage={HImage}
@@ -239,6 +256,7 @@ const ConfigEditor = () => {
             <MenuItem onClick={() => handleSportSelection("Football")}>Football</MenuItem>
             <MenuItem onClick={() => handleSportSelection("Soccer")}>Soccer</MenuItem>
             <MenuItem onClick={() => handleSportSelection("Baseball")}>Baseball/Softball</MenuItem>
+            <MenuItem onClick={() => handleSportSelection("Basketball")}>Basketball</MenuItem>
           </Menu>
 
           {/* This Button is for grabbing the users old saved templates to remodify */}
