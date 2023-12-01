@@ -36,7 +36,7 @@ const ConfigEditor = () => {
   const [color1, setColor1] = useState("#90ee90");
   const [color2, setColor2] = useState("#90ee90");
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
-  const [selectedTemplate, setSelectedTemplate] = useState("Saved Template");
+  const [selectedTemplate, setSelectedTemplate] = useState("Saved Scoreboards");
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
 
   const handleSportSelection = (sport) => {
@@ -115,7 +115,7 @@ const ConfigEditor = () => {
     };
 
   // endpoint URL  backend
-  const endpoint = 'ec2-34-209-99-170.us-west-2.compute.amazonaws.com'; 
+  const endpoint = '34.209.99.170'; 
 
   // Send a POST request to the backend
   try {
@@ -158,7 +158,7 @@ const ConfigEditor = () => {
   return (
     <View className="App">
       <Card>
-        <h1>Template Editor</h1>
+        <h1>Scoreboard Editor</h1>
       </Card>
 
       <div className="ButtonContainer">
@@ -175,28 +175,30 @@ const ConfigEditor = () => {
 
         {/* Button press to upload the user image for the teams */}
         {/* Temporarily displaying it in the bottom corners */}
+        <button className="fileUploadBtn" onClick={() => handleFileUploadClick(1)}>
+          Upload File
+        </button>
         <input
           id="team1ImageInput"
           type="file"
-          style={{ display: "none" }}
+          className="hiddenFileInput"
           onChange={(e) => handleImageUpload(e, setTeam1Image, 1)}
         />
-        <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
-          {team1Image ? team1Image.name : "Upload File"}
-        </button>
+
         {team1Image && (
           <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
         )}
 
+      <button className="fileUploadBtn" onClick={() => handleFileUploadClick(1)}>
+          Upload File
+        </button>
         <input
           id="team2ImageInput"
           type="file"
-          style={{ display: "none" }}
+          className="hiddenFileInput"
           onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
         />
-        <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
-          {team2Image ? team2Image.name : "Upload File"}
-        </button>
+
         {team2Image && (
           <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
         )}
@@ -231,14 +233,17 @@ const ConfigEditor = () => {
         </Menu>
       </div>
 
-      <div>
-        {SBComponent}
+      <div class="parent-element">
+        <div class="scoreboardGen">
+            {SBComponent}
+        </div>
       </div>
+
 
       {/* NOTE: Somehow naming this the same as the other container messes up the home page css
       even though this links a different cs file and that one...idek */}
-      <div className="container3">
-        <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
+      <div className="templateSave">
+        <Button className="ButtonSave" onClick={SaveTemplate}>Save Scoreboard</Button>
       </div>
 
 

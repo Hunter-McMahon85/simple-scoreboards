@@ -6,6 +6,7 @@
 h1 {
   margin: 0;
   font-size: 5rem;
+  font-family:'Franklin Gothic Medium';
   color: black;
   font-weight: 200;
   font-style: normal;
@@ -19,11 +20,13 @@ h1 {
   width: 100vw;
 }
 
-.container3 {
+.templateSave {
+  position: relative;
+  width:100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  height: 100px;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .ButtonSave {
@@ -47,6 +50,7 @@ h1 {
   right: 10px;
   display: flex;
   gap: 10px;
+  z-index: 10; 
 }
 
 .homeButton {
@@ -96,8 +100,9 @@ h1 {
 }
 
 .customMenuButton {
-  max-width: 10%;
+  max-width: 200px;
   margin-right: 1%;
+  flex-grow: 2;
   display: flex;
   gap: 10px;
 }
@@ -134,7 +139,39 @@ h1 {
   height: auto;
 }
 
-.FB_Slim_Container {
+.parent-element {
   position: relative;
-  bottom: 0%;
+  height: 100vh;
+}
+
+.scoreboardGen {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  z-index: 1; /* Lower z-index than the ButtonContainer means I can click other buttons */
+  pointer-events: none; 
+  transform: translate(-50%, -50%);
+  
+}
+
+
+/* File Upload button Graphic Elemens */
+.fileUploadBtn {
+  background-color: #00b6bc; 
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 1%; 
+  white-space: nowrap; 
+}
+
+.fileUploadBtn:hover {
+  background-color: #0c6170; 
+}
+
+.hiddenFileInput {
+  display: none; 
 }
