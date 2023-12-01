@@ -1,11 +1,11 @@
 .docbody{
-    background-color: lightblue;
+    background-color: white;
 }
 
 .docbody h1 {
     width: 100vw;
     text-align: center;
-    background-color: #60a19d62;
+    background-color: #60a3d9;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +22,27 @@
     margin-right: 90px;
 }
 
+.homeButton {
+    background-color: #466b99;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+  }
+  
+  .homeButton:hover {
+    background-color: #1F2B3F;
+  }
+
 .doccontent a {
     color: coral;
+}
+
+.docksImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 

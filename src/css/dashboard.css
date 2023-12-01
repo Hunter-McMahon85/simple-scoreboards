@@ -57,8 +57,7 @@
 }
 
 .SObutton {
-  color: white;
-  background-color: red;
+  color: black;
   background-color: lightcoral;
   border: 2px solid #e64040;
   padding: 6px 20px;
@@ -66,6 +65,10 @@
   cursor: pointer;
   float: right;
   margin-right: 5px;
+}
+
+.SObutton:hover {
+  background-color: #e64040;
 }
 
 .SportPopupButton {

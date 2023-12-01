@@ -6,7 +6,7 @@ import FBScorekeeper from "./FB_controller";
 import SoccerScorekeeper from "./Soccer_Controller";
 import BaseballController from "./Basball_Controller";
 import BasketScorekeeper from "./BasketballController";
-import copy from 'clipboard-copy';
+import copy from "clipboard-copy";
 
 /*
 Vars and Functions in Scorekeeper:

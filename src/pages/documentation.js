@@ -8,7 +8,7 @@ const documentation = () => {
     <>
       <div className="docbody">
         <Link to="/">
-            <button className="SObutton">
+            <button className="homeButton">
               Home
             </button>
         </Link>
@@ -37,8 +37,7 @@ const documentation = () => {
               OBS and you will be able to start a scorekeeping session
             </li>
           </ul>
-          <img src="../../../InstructionImg/docks.PNG" alt="docks" width="300" height="300"></img>
-          <div className="dock_images"></div>
+          <img src="../../../InstructionImg/docks.PNG" alt="docks" className="docksImage"></img>
           <h2>Before You Broadcast</h2>
           <ul>
             <li>
