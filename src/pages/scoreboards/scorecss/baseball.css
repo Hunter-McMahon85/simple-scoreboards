@@ -16,11 +16,11 @@
 }
 
 .baseball_items h1 {
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .teams h1 {
-    width: auto;
+    width: 100%;
     padding: 0px 5px 0px 5px;
     border: 2.5px solid black;
 }
@@ -37,4 +37,14 @@
 .misc_info h1 {
     color: white;
     font-size: larger;
+}
+
+.basevteam {
+    display: flex;
+    flex-direction: row;
+}
+
+.basehteam {
+    display: flex;
+    flex-direction: row;
 }

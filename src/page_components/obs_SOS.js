@@ -5,8 +5,8 @@ import "../css/dashboard.css";
 function StartMsg({ onClose }) {
     return (
         <>
-            <div className="SCcontain">
-                <div className="SessionCreator">
+            <div className="Soscontain">
+                <div className="sos">
                     <h2>Welcome to Your Scorekeeping Session</h2>
                     <h3>
                         If this is your first time using, Be sure to do the following to add
