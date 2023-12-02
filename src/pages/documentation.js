@@ -49,9 +49,6 @@ const documentation = () => {
             </li>
           </ul>
           <div className="ObsSetupImgContain">
-            <img src="public/InstructionImg/docks.PNG" alt="docks"></img>
-            <img src="../../../InstructionImg/custbrodocks.PNG" alt="docks" ></img>
-            <img src="../../../InstructionImg/name_link.PNG" alt="docks"></img>
           </div>
           <h2>Before You Broadcast</h2>
           <ul>
@@ -81,11 +78,6 @@ const documentation = () => {
               correctly
             </li>
           </ul>
-          <div className="ObsSetupImgContain">
-            <img src="../../../InstructionImg/sources.PNG" alt="docks"></img>
-            <img src="../../../InstructionImg/sourceselect.PNG" alt="docks" ></img>
-            <img src="../../../InstructionImg/sourceadd.PNG" alt="docks"></img>
-          </div>
           <div className="source_images"></div>
           {/* ... (steps for starting a session and displaying the scoreboard) ... */}
           <h2>Beggining a Session</h2>
@@ -100,7 +92,6 @@ const documentation = () => {
               page and display your scoreboard.
             </li>
           </ul>
-          <img src="../../../InstructionImg/refresh.PNG" alt="docks"></img>
           <p>
             With these steps complete, you are ready to broadcast using a Simple
             Scoreboards Overlay
