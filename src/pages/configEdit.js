@@ -236,9 +236,11 @@ const ConfigEditor = () => {
   };
 
 
-  //============================================HTML+REACT=================
+  //============================================HTML+REACT=========================
   // Spagehtti Code Incoming
   return (
+
+  //-----------------------------------------------Header + Navbar---------------
     <View className="App">
       <div className="sticky">
         <Card>
@@ -257,8 +259,7 @@ const ConfigEditor = () => {
           <input className="colorPicker" type="color" value={color1} onChange={ColorChange1} />
           <input className="colorPicker" type="color" value={color2} onChange={ColorChange2} />
 
-          {/* Button press to upload the user image for the teams */}
-          {/* Temporarily displaying it in the bottom corners */}
+          {/*--------------------------------------------Button press to upload the user image for the teams---------------------------------*/}
           <input
             id="team1ImageInput"
             type="file"
@@ -268,9 +269,7 @@ const ConfigEditor = () => {
           <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
             {team1Image ? team1Image.name : "Upload File"}
           </button>
-          {/* {team1Image && (
-          //   <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
-          // )} */}
+
 
           <input
             id="team2ImageInput"
@@ -281,15 +280,8 @@ const ConfigEditor = () => {
           <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
             {team2Image ? team2Image.name : "Upload File"}
           </button>
-          {/* {team2Image && (
-            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image" />
-          )} */}
-
-
-          {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
-        Its sorta responsive 
-        Choice of sports will eventually change which scoreboard pops up to let the user modify it
-        Will probably have to redo the code a lot if I'm imagining what might happen right */}
+ 
+          {/* Button to select sports */}
           <Menu
             trigger={
               <MenuButton className="customMenuButton" variation="primary" size="medium" width="100%">
@@ -324,6 +316,8 @@ const ConfigEditor = () => {
           </Button>          </div>
         </div>
       </div>
+
+{/*===============Scoreboard Component Loading=================== */}
       <div>
         {SBComponent}
       </div>
