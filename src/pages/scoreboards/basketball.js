@@ -1,7 +1,7 @@
 /*
 basketball.js
 Description:
-host the sbasketball scoreboard overlay component
+host the basketball scoreboard overlay component
 Creation date:
 Inital Author: Hunter McMahon
 */
