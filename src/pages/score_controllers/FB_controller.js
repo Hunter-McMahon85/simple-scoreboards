@@ -6,7 +6,6 @@ Creation date: 10/27/23
 Initial Author: Hunter McMahon
 */
 import React, { useState } from "react";
-// give
 
 // FBScorekeeper component for managing football scores and game details
 

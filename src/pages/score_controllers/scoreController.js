@@ -15,8 +15,6 @@ import BaseballController from "./BaseballController";
 import BasketScorekeeper from "./BasketballController";
 import copy from "clipboard-copy";
 
-// you
-
 // Function and Variable Descriptions:
 
 /*
