@@ -31,7 +31,6 @@ const getUserId = async () => {
 
 const ConfigEditor = () => {
   // Variables for setting and getting the two images, two colors, and sport the user will choose
-  // probably more cases I need to consider 
   const [team1Image, setTeam1Image] = useState(null);
   const [team2Image, setTeam2Image] = useState(null);
   const [color1, setColor1] = useState("#90ee90");
@@ -51,6 +50,7 @@ const ConfigEditor = () => {
     }
   };
 
+//====================================UseStates to update various states=================
   // Call this function when the component mounts using useEffect
   React.useEffect(() => {
     initTemplatesArray();
@@ -61,7 +61,7 @@ const ConfigEditor = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color1, color2, selectedSport]);
 
-
+//========================================Sport Selection=========================
   const handleSportSelection = (sport) => {
     setSelectedSport(sport);
     switch (sport) {
@@ -142,7 +142,7 @@ const ConfigEditor = () => {
   // const handleTemplateSelection = (temp) => {
   //   setSelectedTemplate(temp);
   // };
-
+// ----------------------------------Color Changes---------------------
   const ColorChange1 = (event) => {
     setColor1(event.target.value);
     handleSportSelection(selectedSport);
@@ -152,7 +152,7 @@ const ConfigEditor = () => {
     setColor2(event.target.value);
     handleSportSelection(selectedSport);
   };
-
+//------------------------------------Saving of Template-------------------------
   const saveTemplate = async () => {
     //databse just takes in color and images
     const templates = JSON.parse(localStorage.getItem('templates'));
@@ -183,7 +183,7 @@ const ConfigEditor = () => {
 
   };
 
-
+//------------------------------Image Uploading and verification------------------
   const handleImageUpload = (event, setImage, teamNum) => {
     const file = event.target.files[0];
     const img = new Image();
@@ -213,6 +213,8 @@ const ConfigEditor = () => {
     handleSportSelection(selectedSport);
   };
 
+
+  //=======================================LOAD SCOREBOARDS===================================================
   // Slight modification to Hunters function to allow color changes
   const loadTemplate = (slotIndex) => {
     setSelectedSlot(slotIndex);
@@ -233,6 +235,8 @@ const ConfigEditor = () => {
 
   };
 
+
+  //============================================HTML+REACT=================
   // Spagehtti Code Incoming
   return (
     <View className="App">
@@ -264,9 +268,9 @@ const ConfigEditor = () => {
           <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
             {team1Image ? team1Image.name : "Upload File"}
           </button>
-          {team1Image && (
-            <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
-          )}
+          {/* {team1Image && (
+          //   <img src={URL.createObjectURL(team1Image)} alt={team1Image.name} className="uploaded-image" />
+          // )} */}
 
           <input
             id="team2ImageInput"
@@ -277,15 +281,10 @@ const ConfigEditor = () => {
           <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
             {team2Image ? team2Image.name : "Upload File"}
           </button>
-          {team2Image && (
+          {/* {team2Image && (
             <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image" />
-          )}
+          )} */}
 
-
-
-          {team2Image && (
-            <img src={URL.createObjectURL(team2Image)} alt={team2Image.name} className="uploaded-image2" />
-          )}
 
           {/* Could not for the life of me figure out why the dropdown libraries weren't working so this will have to do
         Its sorta responsive 
