@@ -249,7 +249,7 @@ const ConfigEditor = () => {
 
         <div className="ButtonContainer">
           <Link to="/mydashboard">
-            <Button className="homeButton">Home</Button>
+            <Button className="toDashboardButton">Home</Button>
           </Link>
           <Button className="signout" onClick={signOut}>Sign Out</Button>
         </div>
@@ -273,7 +273,7 @@ const ConfigEditor = () => {
           <input
             id="team2ImageInput"
             type="file"
-            style={{ display: "none" }}
+            style={{ display: "none", marginLeft:"5px" }}
             onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
           />
           <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
