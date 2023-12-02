@@ -134,10 +134,32 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
   width: 60%;
-  height: 30%;
+  height: auto;
 }
 
-.SessionCreator ul {
+.Popcontain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupinstruct {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 60%;
+  height: auto;
+}
+
+.popupinstruct ul {
   text-align: left;
 }
 

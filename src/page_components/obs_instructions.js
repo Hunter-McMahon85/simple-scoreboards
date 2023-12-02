@@ -5,8 +5,8 @@ import "../css/dashboard.css";
 function SeshSetup({ onClose }) {
   return (
     <>
-      <div className="SCcontain">
-        <div className="SessionCreator">
+      <div className="Popcontain">
+        <div className="popupinstruct">
           <h1>Getting Started:</h1>
           <p>
             To get started with broadcasting, first make a preset in our preset

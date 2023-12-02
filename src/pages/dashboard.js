@@ -27,8 +27,7 @@ const Dashboard = () => {
 
   let popup = (
     <>
-      {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}   
-      {ShowSessionStart && <SessionStart onClose={handleCloseSessionStart} />}  
+      {ShowSessionStart && <SeshSetup onClose={handleCloseSessionStart} />}    
     </>
   );
   let sos_buttxt = "How to Set up with OBS";
