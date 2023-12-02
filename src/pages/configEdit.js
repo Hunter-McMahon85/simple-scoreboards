@@ -1,5 +1,5 @@
 // component where users can customize their scoreboards
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify";
@@ -41,6 +41,25 @@ const ConfigEditor = () => {
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
   const [HImage, setHImage] = useState("../../../logo192.png");
   const [VImage, setVImage] = useState("../../../logo192.png");
+  // Used for handling saving and loading templates
+  const [selectedSlot, setSelectedSlot] = useState(0);
+  // Initializing the scoreboards in local storage
+  // Doing 5 as we have 5 slots on the dashboard
+  const initTemplatesArray = () => {
+    if (!localStorage.getItem('templates')) {
+      localStorage.setItem('templates', JSON.stringify(Array(5).fill(null)));
+    }
+  };
+
+  // Call this function when the component mounts using useEffect
+  React.useEffect(() => {
+    initTemplatesArray();
+  }, []);
+
+  useEffect(() => {
+    handleSportSelection(selectedSport);
+  }, [color1, color2, selectedSport]);
+
 
   const handleSportSelection = (sport) => {
     setSelectedSport(sport);
@@ -133,8 +152,9 @@ const ConfigEditor = () => {
     handleSportSelection(selectedSport);
   };
 
-  const SaveTemplate = async () => {
+  const saveTemplate = async () => {
     //databse just takes in color and images
+    const templates = JSON.parse(localStorage.getItem('templates'));
     const userId = await getUserId();
     const templateData = {
       color1: color1,
@@ -144,9 +164,9 @@ const ConfigEditor = () => {
       sport: selectedSport,
       userID: userId
     };
-
-    localStorage.setItem('templateData', JSON.stringify(templateData));
-    alert('Template saved successfully!');
+    templates[selectedSlot] = templateData;
+    localStorage.setItem('templates', JSON.stringify(templates));
+    alert(`Template saved to slot ${selectedSlot + 1}`);
     // // endpoint URL  backend
     // const endpoint = '34.209.99.170';
 
@@ -193,20 +213,23 @@ const ConfigEditor = () => {
   };
 
   // Slight modification to Hunters function to allow color changes
-  const loadTemplate = (templateName) => {
-    const savedData = localStorage.getItem('templateData');
-    if (savedData) {
-      const templateData = JSON.parse(savedData);
+  const loadTemplate = (slotIndex) => {
+    setSelectedSlot(slotIndex);
+    const templates = JSON.parse(localStorage.getItem('templates'));
+    const templateData = templates[slotIndex];
+    if (templateData) {
       setColor1(templateData.color1);
       setColor2(templateData.color2);
+      setHImage(templateData.team1Image);
+      setVImage(templateData.team2Image);
       setSelectedSport(templateData.sport);
-      // Updat e the Scoreboard
+      // Load the sport component based on the saved sport
       handleSportSelection(templateData.sport);
-      setSelectedTemplate(templateName);
-
     } else {
-      alert('No saved template found.');
+      alert(`No template found in slot ${slotIndex + 1}.`);
     }
+
+
   };
 
   // Spagehtti Code Incoming
@@ -279,7 +302,7 @@ const ConfigEditor = () => {
             <MenuItem onClick={() => handleSportSelection("Baseball")}>Baseball/Softball</MenuItem>
             <MenuItem onClick={() => handleSportSelection("Basketball")}>Basketball</MenuItem>
           </Menu>
-
+ 
           {/* This Button is for grabbing the users old saved templates to remodify */}
           {/* Will need somewhere to delete templates maybe? */}
           <Menu
@@ -289,12 +312,16 @@ const ConfigEditor = () => {
                 </MenuButton>
               }
             >
-              <MenuItem onClick={loadTemplate}>Saved Scoreboards</MenuItem>
-            </Menu>
+              {[...Array(5).keys()].map((index) => (
+                <MenuItem key={index} onClick={() => loadTemplate(index)}>
+                  Load from Slot {index + 1}
+                </MenuItem>
+              ))}            </Menu>
 
           <div className="container3">
-            <Button className="ButtonSave" onClick={SaveTemplate}>Save Template</Button>
-          </div>
+          <Button className="ButtonSave" onClick={() => saveTemplate(saveTemplate)}>
+            Save Template
+          </Button>          </div>
         </div>
       </div>
       <div>
