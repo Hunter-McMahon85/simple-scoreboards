@@ -17,6 +17,11 @@ async function signOut() {
 const Dashboard = () => {
   const [ShowSessionStart, setShowSessionStart] = useState(false);
 
+  const loadTemplates = () =>
+  {
+
+  }
+  
   const handleopenSessionStart = () => {
     setShowSessionStart(true);
   };
@@ -66,7 +71,7 @@ const Dashboard = () => {
 
         <Link to="/presetcreator">
           <button className="PresetCreatorButton" title="Create a new template preset">
-            New Preset
+            New Preset {loadTemplates}
           </button>
         </Link>
 
@@ -80,15 +85,15 @@ const Dashboard = () => {
 
           {/* add source for image within the buttons */}
           <div className="preButcontain">
-            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>1 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick()}>1 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>2 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick()}>2 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>3 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick()}>3 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>4 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick()}>4 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick('arg1', 'arg2')}>5 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick()}>5 sport <br/> team1 vs. team2</button>
           </div>
         </div>
       </div>
