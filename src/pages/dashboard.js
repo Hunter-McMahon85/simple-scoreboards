@@ -1,5 +1,5 @@
 // component for users choose a session to start or edit a scoreboard
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Auth } from "aws-amplify";
 import { Link, useNavigate } from "react-router-dom";
 import SessionStart from "../page_components/session_config";
