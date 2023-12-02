@@ -1,3 +1,10 @@
+/*
+BasketballController.js
+Description:
+host the basketball scorekeeper component; UI interface for controlling/updating the basketball scoreboard
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React, { useState } from "react";
 
 const BasketScorekeeper = ({

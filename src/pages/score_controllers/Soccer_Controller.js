@@ -1,3 +1,10 @@
+/*
+Soccer.js
+Description:
+host the soccer scorekeeper component; UI interface for controlling/updating the soccer scoreboard
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 
 const SoccerScorekeeper = ({

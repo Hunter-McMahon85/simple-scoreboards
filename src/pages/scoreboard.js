@@ -1,6 +1,12 @@
-// container component for the scoreboard pages
+/*
+scoreboard.js
+Description:
+this component provides a running envornment for the scoreboard elements found in the 
+scoreboards directory. This also provides conditional behavior to render a desired scoreboard component
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React, { useState, useEffect } from "react";
-//base template elements
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";

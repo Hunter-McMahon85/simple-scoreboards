@@ -1,4 +1,11 @@
-// holds score controller elements
+/*
+scorecontroller.js
+Description:
+a psuedo "backend" for controlling scoreboards during an active session, 
+functions defined here are fed to the individual scoreboard ui componets 
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 // our different score controllers

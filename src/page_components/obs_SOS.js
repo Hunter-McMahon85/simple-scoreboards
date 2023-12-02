@@ -1,4 +1,11 @@
-// component for start of session in OBS
+/*
+OBS_SOS.js
+Description:
+This component acts as a popup that is displayed at a start of a 
+session in obs to ensure users know how to add the scoreboard to obs
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 import "../css/dashboard.css";
 

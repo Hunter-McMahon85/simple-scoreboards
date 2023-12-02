@@ -1,3 +1,12 @@
+/*
+App.js
+Description:
+react component that is loaded into index.html page in public. 
+This file determines the routing behavior linking other react 
+components to the web apps overall page heirachy 
+Creation date:
+Inital Author: Hunter McMahon
+*/
 // react imports
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -38,11 +47,7 @@ function App() {
           path="/myscorekeeper"
           Component={withAuthenticator(scorekeeper)}
         ></Route>
-        <Route
-          exact
-          path="/myscoreboard"
-          Component={scoreboard}
-        ></Route>
+        <Route exact path="/myscoreboard" Component={scoreboard}></Route>
       </Routes>
     </Router>
   );

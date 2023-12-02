@@ -1,5 +1,11 @@
-// this component is rendered when a scorekeeping session is started,
-// this is where the user inputs their pre-session preferences
+/*
+Session_config.js
+Description:
+this component host a popup that lets users launch a demo scorekeeping session. 
+this component saves info about a session into local storage and then opens the scorekeeper
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/dashboard.css";

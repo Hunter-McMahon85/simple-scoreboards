@@ -1,4 +1,10 @@
-// component for use documentation
+/*
+documentation.js
+Description:
+this component holds the html for the apps documentation page
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/documentation.css";

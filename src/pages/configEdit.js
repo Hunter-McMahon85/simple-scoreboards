@@ -1,4 +1,10 @@
-// component where users can customize their scoreboards
+/*
+configedit.js
+Description:
+this component handles the user editing of scoreboard presets. Behavior relating to modifing and saving user presets is handled here
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React, { useState, useEffect } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";

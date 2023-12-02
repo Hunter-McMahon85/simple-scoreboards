@@ -1,5 +1,11 @@
+/*
+BaseballController.js
+Description:
+host the baseball scorekeeper component; UI interface for controlling/updating the baseball scoreboard
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
-/*TODO: add graphics for baserunners*/
 
 const BaseballController = ({
     U_score,
