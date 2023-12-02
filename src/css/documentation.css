@@ -30,14 +30,14 @@
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
-  }
+}
   
-  .homeButton:hover {
-    background-color: #1F2B3F;
-  }
+.homeButton:hover {
+  background-color: #1F2B3F;
+}
 
 .doccontent a {
-    color: #466b99;
+    color: lightcoral;
 }
 
 .docksImage {

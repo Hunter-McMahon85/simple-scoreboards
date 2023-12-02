@@ -1,6 +1,6 @@
 .left {
   flex: 1;
-  background-color: lightblue;
+  background-color: #60a3d9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,9 +24,9 @@
 .container h1 {
   margin: 0;
   font-size: 5rem;
-  color: white;
+  color: black;
   font-weight: 100;
-  font-style: oblique;
+  text-align: center;
 }
 
 a {
@@ -47,7 +47,7 @@ a:hover {
 
 .about {
   flex: 1;
-  background-color: #E4F4F3;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,7 +56,7 @@ a:hover {
 }
 
 .full-width-container {
-  background-color: #E4F4F3;
+  background-color: #d4f1f4;
 }
 
 .full-width-container li {
@@ -66,7 +66,7 @@ a:hover {
 .about h1{
   text-align: center;
   color: black;
-  background-color: #60a19d62;
+  background-color: #d4f1f4;
   width: 100%;
 }
 
@@ -79,16 +79,18 @@ a:hover {
 }
 
 .broadcast-button {
-  background-color: #00B6BC;
   color: white;
+  background-color: #466b99;
+  border: 2px solid #1F2B3F;
   font-size: 1.2rem;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
+  padding: 6px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .broadcast-button:hover {
-  background-color: #0C6170;
+  background-color: #1F2B3F;
 }
 /*devices that are larger than tablets*/
 @media only screen and (min-width: 768px) {
