@@ -49,7 +49,7 @@ const documentation = () => {
             </li>
           </ul>
           <div className="ObsSetupImgContain">
-            <img src="../../../InstructionImg/docks.PNG" alt="docks"></img>
+            <img src="public/InstructionImg/docks.PNG" alt="docks"></img>
             <img src="../../../InstructionImg/custbrodocks.PNG" alt="docks" ></img>
             <img src="../../../InstructionImg/name_link.PNG" alt="docks"></img>
           </div>
