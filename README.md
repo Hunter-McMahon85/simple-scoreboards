@@ -1,9 +1,27 @@
-# Simple Scoreboards
-simple scoreboards aims to provide an overlay tool to producers of sports broadcasting productions. Our product aims to be budget friendly and simple to use, Ideal for amatuer broadcasters or for use in educational context. 
-## how it works
-Our product provides an HTML page which contains a scoreboard and a transparent background. Users can then take this page and add it to broadcasting apps, like Open Broadcasting Software (OBS), to give their own broadcast an overlay similar to what you may find on telecast of professional sporting events. Our product also will provide an controller page so that the broadcaster can operate the scoreboard during the game. This tool is an visual aid that sports broadcasters will add to their broadcast in order to give viewers visual representation of the state of the game their broadcasting. 
+# Simple Scoreboards 
 
+CS 422 Project Submission
 
-## aspirations
-we hope to make scoreboard presets for multiple sports. Additionally, we wish to allow users to be able to create and save presets for reuse (hence why we implemented auth). These are our must have goals.
-In terms of could have goals, we have breifly looked into allowing users to broadcast directly from our site to youtube using the youtube api though this is still something we are exploring conceptually to see if its possible. 
+Instructor: Juan Flores
+
+Authors: Hunter McMahon, Micah Nichols, Quinn Rainen, Calvin Stewart
+
+Simple Scoreboards is a web application that provides a ‘score bug’ overlay for live streamers. It can be used to design and control a custom, digital scoreboard. By default, it supports a small suite of sports.
+
+## Setup Guide
+
+Simple Scoreboards is designed as a supplemental tool for streaming software. The application can be tested and used without one, but the intent is to use it with one. We recommend OBS as the streaming software, as it is popular, well-maintained, and free. https://obsproject.com/download
+
+The application itself can be accessed from www.simplescoreboards.com. Precise instructions for how to set up the application locally are present in the programmer documentation in our project submission.
+
+## User Instructions
+
+Precise instructions for how to use the software are present in the user documentation in our project submission.
+
+## Source
+
+A brief description of all files and directories in the project repository can be found in the programmer documentation in our project submission.
+
+## Access Keys
+
+For setting up a local build, you will need AWS access keys for amplify integration. They can be found in the README in our project submission.
