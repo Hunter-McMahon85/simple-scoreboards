@@ -9,6 +9,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
 
+// react compent holding the landing page html
 const landing = () => {
   return (
     <>
