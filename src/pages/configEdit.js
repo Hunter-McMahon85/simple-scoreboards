@@ -37,7 +37,7 @@ const ConfigEditor = () => {
   const [color1, setColor1] = useState("#90ee90");
   const [color2, setColor2] = useState("#90ee90");
   const [selectedSport, setSelectedSport] = useState("Choose a sport");
-  const [selectedTemplate, setSelectedTemplate] = useState("Saved Scoreboards");
+  const [selectedTemplate] = useState("Saved Scoreboards");
   const [SBComponent, setSBComponent] = useState("Pick a sport above to get started");
   const [HImage, setHImage] = useState("../../../logo192.png");
   const [VImage, setVImage] = useState("../../../logo192.png");
@@ -58,6 +58,7 @@ const ConfigEditor = () => {
 
   useEffect(() => {
     handleSportSelection(selectedSport);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [color1, color2, selectedSport]);
 
 
