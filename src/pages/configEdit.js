@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
 configEdit.js
 Description: React JS file for scoreboard editor page
 
@@ -7,6 +8,14 @@ Inital Author: Hunter McMahon
 */
 
 // Import necessary React and UI components
+=======
+configedit.js
+Description:
+this component handles the user editing of scoreboard presets. Behavior relating to modifing and saving user presets is handled here
+Creation date:
+Inital Author: Hunter McMahon
+*/
+>>>>>>> d0ffc25e27029ee5a79c2b030c990741c0af70d2
 import React, { useState, useEffect } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";

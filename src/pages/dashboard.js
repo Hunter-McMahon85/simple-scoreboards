@@ -1,4 +1,10 @@
-// component for users choose a session to start or edit a scoreboard
+/*
+dashboard.js
+Description:
+this component holds the dashboard page of the app. This page also holds conditional behavior for launching scorekeeping sessions
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React, { useState} from "react";
 import { Auth } from "aws-amplify";
 import { Link, useNavigate } from "react-router-dom";

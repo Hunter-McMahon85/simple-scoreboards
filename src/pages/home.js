@@ -1,8 +1,15 @@
-// landing page component
+/*
+home.js
+Description:
+this component holds the landing page for our web app
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.css";
 
+// react compent holding the landing page html
 const landing = () => {
   return (
     <>

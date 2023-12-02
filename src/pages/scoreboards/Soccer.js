@@ -1,3 +1,10 @@
+/*
+Soccer.js
+Description:
+host the soccer scoreboard overlay component
+Creation date:
+Inital Author: Hunter McMahon
+*/
 import React from "react";
 import "./scorecss/soccer.css";
 

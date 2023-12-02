@@ -1,5 +1,6 @@
 /*
 BaseballController.js
+<<<<<<< HEAD
 Description: 
 
 Creation date: 
@@ -9,6 +10,14 @@ Inital Author:
 import React from "react";
 /*TODO: add graphics for baserunners*/
 // never
+=======
+Description:
+host the baseball scorekeeper component; UI interface for controlling/updating the baseball scoreboard
+Creation date:
+Inital Author: Hunter McMahon
+*/
+import React from "react";
+>>>>>>> d0ffc25e27029ee5a79c2b030c990741c0af70d2
 
 // This component holds the epic and cool baseball controller
 const BaseballController = ({

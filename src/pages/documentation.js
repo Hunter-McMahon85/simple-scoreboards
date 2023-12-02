@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 // Component for displaying documentation for using Simple Scoreboards
 
+=======
+/*
+documentation.js
+Description:
+this component holds the html for the apps documentation page
+Creation date:
+Inital Author: Hunter McMahon
+*/
+>>>>>>> d0ffc25e27029ee5a79c2b030c990741c0af70d2
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/documentation.css"; // Importing styling for the documentation component
