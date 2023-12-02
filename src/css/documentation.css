@@ -40,10 +40,14 @@
     color: lightcoral;
 }
 
-.docksImage {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40%;
+@media only screen and (min-width: 768px) {
+.ObsSetupImgContain {
+    display: flex;
+}
 }
 
+.ObsSetupImgContain img {
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+}

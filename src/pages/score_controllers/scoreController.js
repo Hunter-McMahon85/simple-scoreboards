@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // our different score controllers
 import FBScorekeeper from "./FB_controller";
 import SoccerScorekeeper from "./Soccer_Controller";
-import BaseballController from "./Basball_Controller";
+import BaseballController from "./BaseballController";
 import BasketScorekeeper from "./BasketballController";
 import copy from "clipboard-copy";
 

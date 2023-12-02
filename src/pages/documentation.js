@@ -8,9 +8,9 @@ const documentation = () => {
     <>
       <div className="docbody">
         <Link to="/">
-            <button className="homeButton">
-              Home
-            </button>
+          <button className="homeButton">
+            Home
+          </button>
         </Link>
         <h1>Getting Started:</h1>
         <div className="doccontent">
@@ -37,7 +37,11 @@ const documentation = () => {
               OBS and you will be able to start a scorekeeping session
             </li>
           </ul>
-          <img src="../../../InstructionImg/docks.PNG" alt="docks" className="docksImage"></img>
+          <div className="ObsSetupImgContain">
+            <img src="../../../InstructionImg/docks.PNG" alt="docks"></img>
+            <img src="../../../InstructionImg/custbrodocks.PNG" alt="docks" ></img>
+            <img src="../../../InstructionImg/name_link.PNG" alt="docks"></img>
+          </div>
           <h2>Before You Broadcast</h2>
           <ul>
             <li>
@@ -66,13 +70,16 @@ const documentation = () => {
               correctly
             </li>
           </ul>
+          <div className="ObsSetupImgContain">
+            <img src="../../../InstructionImg/sources.PNG" alt="docks"></img>
+            <img src="../../../InstructionImg/sourceselect.PNG" alt="docks" ></img>
+            <img src="../../../InstructionImg/sourceadd.PNG" alt="docks"></img>
+          </div>
           <div className="source_images"></div>
           <h2>Beggining a Session</h2>
           <ul>
             <li>
-              From our website in the OBS Dock, Click on a saved preset or on
-              start session (if your presets do not appear, you may need to
-              right click on the tab and click on "refresh").
+              From our website in the OBS Dock, Click on a saved preset
             </li>
             <li>
               Then, left-click on the "scoreboard" that you added to sources.
@@ -81,7 +88,7 @@ const documentation = () => {
               page and display your scoreboard.
             </li>
           </ul>
-          <div className="sesh_images"></div>
+          <img src="../../../InstructionImg/refresh.PNG" alt="docks"></img>
           <p>
             With these steps complete, you are ready to broadcast using a Simple
             Scoreboards Overlay
