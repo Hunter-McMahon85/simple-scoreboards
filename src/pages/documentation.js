@@ -112,4 +112,4 @@ const documentation = () => {
   );
 };
 
-export default documentation; // i have to fart so bad right now but i don't want it to smell like farts in my room
+export default documentation; 

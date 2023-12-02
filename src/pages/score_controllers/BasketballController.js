@@ -79,4 +79,4 @@ const BasketScorekeeper = ({
   );
 };
 
-export default BasketScorekeeper; // why did we choose react
+export default BasketScorekeeper;

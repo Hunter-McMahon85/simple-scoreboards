@@ -15,7 +15,7 @@ import BaseballController from "./BaseballController";
 import BasketScorekeeper from "./BasketballController";
 import copy from "clipboard-copy";
 
-// you
+
 
 // Function and Variable Descriptions:
 
@@ -227,7 +227,7 @@ const ScoreController = () => {
       );
       break;
     case "Baseball":
-      /*TODO: add graphics for baserunners*/
+      
       ScoreKeeperComponent = (
         <BaseballController
           U_score={U_score}

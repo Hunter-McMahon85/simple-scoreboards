@@ -6,10 +6,19 @@ Creation date: 10/27/23
 Initial Author: Hunter McMahon
 */
 import React, { useState } from "react";
-// give
+
 
 // FBScorekeeper component for managing football scores and game details
-
+// Props Explanation:
+// - U_score: Function to update the score of the teams (home or visitors)
+// - Change_Period: Function to change the game period/half
+// - ResetTime: Function to reset the game clock
+// - IncrementTime: Function to start or resume the game clock
+// - StopClock: Function to pause the game clock
+// - DefDown: function changes down
+// - DefDistance: function changes distance
+// - hcolor: Color representing the home team
+// - vcolor: Color representing the visitors team
 const FBScorekeeper = ({
   U_score,
   Change_Period,
