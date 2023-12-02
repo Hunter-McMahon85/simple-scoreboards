@@ -113,15 +113,9 @@ h1 {
   text-align: center;
 }
 
-.file-input-label {
-  margin-right: 62%;
-}
-
-
+/* Helps keep the scoreboard in view */
 .sticky
 {
   position: fixed;
   width: 100%;
 }
-
-
