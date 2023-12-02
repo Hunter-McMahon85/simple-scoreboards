@@ -7,6 +7,12 @@ import "../css/dashboard.css";
 function SessionStart({ onClose }) {
   const Board_Choice = (B) => {
     localStorage.setItem("ScoreboardType", B);
+    localStorage.setItem("hcolor", "blue");
+    localStorage.setItem("vcolor","red");
+    localStorage.setItem("himage", "../../../logo192.png");
+    localStorage.setItem("vimage", "../../../logo192.png");
+    localStorage.setItem("hname", "Home Team");
+    localStorage.setItem("vname", "Visiting Team");
   };
   return (
     <>
@@ -16,7 +22,7 @@ function SessionStart({ onClose }) {
           <Link to="/myscorekeeper">
             <button className="SportPopupButton"
               onClick={() => {
-                Board_Choice("FBSlim");
+                Board_Choice("Football");
               }}
             >
               Football

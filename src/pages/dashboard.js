@@ -16,7 +16,6 @@ async function signOut() {
 
 const Dashboard = () => {
   const [ShowSessionStart, setShowSessionStart] = useState(false);
-  const templates = JSON.parse(localStorage.getItem('templates'));
   
   const handleopenSessionStart = () => {
     setShowSessionStart(true);
@@ -42,16 +41,25 @@ const Dashboard = () => {
   }
 
   const Nav = useNavigate();
-  const userPreset = undefined;
 
   const handleClick = (t) => {
-    if (userPreset === undefined) {
+    const templates = JSON.parse(localStorage.getItem('templates'));
+    const templateData = templates[t];
+    if (templateData) {
+      localStorage.setItem("ScoreboardType", templateData.sport);
 
+      localStorage.setItem("himage", templateData.team1Image);
+      localStorage.setItem("vimage", templateData.team2Image);
+      localStorage.setItem("hcolor", templateData.color1);
+      localStorage.setItem("vcolor", templateData.color2);
+      localStorage.setItem("hname", "Home Team");
+      localStorage.setItem("vname", "Vis Team");
+
+       Nav('/myscorekeeper');
+    } else {
       Nav('/presetcreator');
-      console.log(templates[t])
       return;
     }
-    Nav('/myscorekeeper');
   };
 
   return (

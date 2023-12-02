@@ -173,7 +173,7 @@ const ScoreController = () => {
   const ScoreType = localStorage.getItem("ScoreboardType");
   let ScoreKeeperComponent;
   switch (ScoreType) {
-    case "FBSlim":
+    case "Football":
       ScoreKeeperComponent = (
         <FBScorekeeper
           U_score={U_score}
