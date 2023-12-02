@@ -2,8 +2,8 @@
 dashboard.js
 Description:
 this component holds the dashboard page of the app. This page also holds conditional behavior for launching scorekeeping sessions
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/19/23
+Initial Author: Hunter McMahon
 */
 import React, { useState} from "react";
 import { Auth } from "aws-amplify";

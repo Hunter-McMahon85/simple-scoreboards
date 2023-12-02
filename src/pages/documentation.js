@@ -2,8 +2,8 @@
 documentation.js
 Description:
 this component holds the html for the apps documentation page
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/23/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import { Link } from "react-router-dom";

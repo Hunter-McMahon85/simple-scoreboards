@@ -3,8 +3,8 @@ OBS_SOS.js
 Description:
 This component acts as a popup that is displayed at a start of a 
 session in obs to ensure users know how to add the scoreboard to obs
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 11/12/2023
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "../css/dashboard.css";

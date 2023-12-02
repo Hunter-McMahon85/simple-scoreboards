@@ -3,8 +3,8 @@ scoreboard.js
 Description:
 this component provides a running envornment for the scoreboard elements found in the 
 scoreboards directory. This also provides conditional behavior to render a desired scoreboard component
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/21/23
+Initial Author: Hunter McMahon
 */
 import React, { useState, useEffect } from "react";
 import FBSlim from "./scoreboards/FB_Slim";

@@ -1,9 +1,9 @@
 /*
 basketball.js
 Description:
-host the basketball scoreboard overlay component
-Creation date:
-Inital Author: Hunter McMahon
+host the sbasketball scoreboard overlay component
+Creation date: 12/01/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "./scorecss/FB_Slim.css";
