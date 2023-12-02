@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+// give
+
+// FBScorekeeper component for managing football scores and game details
 
 const FBScorekeeper = ({
   U_score,
@@ -11,8 +14,11 @@ const FBScorekeeper = ({
   hcolor,
   vcolor,
 }) => {
+  // State to manage the input for defining distance
   const [DistIn, setDistIn] = useState("");
+  // State to keep track of the last scored points for undo functionality
   const [LastScore, setLastScore] = useState(0);
+  // Styles for home and visiting team colors
   const home_color = {
     backgroundColor: hcolor,
   };
@@ -20,15 +26,20 @@ const FBScorekeeper = ({
     backgroundColor: vcolor,
   };
 
+  // Function to handle changes in input for defining distance
   const handleDistIn = (event) => {
     setDistIn(event.target.value);
   };
 
+  // Function to handle changes in score for a team and update last scored points
   const handleScoreChange = (team, amount) => {
+    // Update score for the specified team
     U_score(team, amount);
+    // Set the last scored points (for possible undo action)
     setLastScore(amount * -1);
   };
 
+  // Render the UI for managing scores, time, downs, and distance
   return (
     <div className="scorekeeper">
       <div className="teams">

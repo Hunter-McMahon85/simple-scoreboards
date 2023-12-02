@@ -1,6 +1,16 @@
+/*
+BaseballController.js
+Description: 
+
+Creation date: 
+Inital Author: 
+*/
+
 import React from "react";
 /*TODO: add graphics for baserunners*/
+// never
 
+// This component holds the epic and cool baseball controller
 const BaseballController = ({
     U_score,
     Change_Period,
@@ -10,6 +20,7 @@ const BaseballController = ({
     hcolor,
     vcolor,
 }) => {
+    // styling for home and visitor team colors
     const home_color = {
         backgroundColor: hcolor,
     };
@@ -17,11 +28,15 @@ const BaseballController = ({
         backgroundColor: vcolor,
     };
 
-    Change_Pos("T")
+    // Initialize game state
+    Change_Pos("T") // Set initial position
     let inning_halfs = 0;
+
+    // Function to handle inning changes
     function HandleInning() {
         inning_halfs++;
         if ((inning_halfs % 2) === 0) {
+            // Change inning period and position
             Change_Period();
             Change_Pos("T")
         } else {
@@ -30,7 +45,9 @@ const BaseballController = ({
     }
 
     let num_outs = 0;
-    DefDown("0");
+    DefDown("0"); // Set initial number of outs
+
+    // Function to handle outs
     function HandleOuts() {
         num_outs++;
         switch (num_outs) {
@@ -41,7 +58,7 @@ const BaseballController = ({
                 DefDown("2");
                 break;
             case 3:
-                DefDown("0");
+                DefDown("0"); // Reset outs, start new inning half
                 num_outs = 0;
                 HandleInning();
                 break;
@@ -53,36 +70,46 @@ const BaseballController = ({
 
     let num_balls = 0;
     let num_strikes = 0;
+
+    // Function to handle balls
     function HandleBall() {
-        num_balls++;
+        num_balls++; // keep going babe
         if (num_balls === 4) {
             num_balls = 0;
             num_strikes = 0;
         }
+
+        // Update pitch result for balls and strikes
         pitch_res("b", num_balls);
         pitch_res("s", num_strikes);
     }
 
+    // Function to handle strikes
     function HandleStrike() {
         num_strikes++;
         if (num_strikes === 3) {
             num_balls = 0;
             num_strikes = 0;
-            HandleOuts();
+            HandleOuts(); // Register an out on 3 strikes
         }
+
+        // Update pitch result for balls and strikes
         pitch_res("b", num_balls);
         pitch_res("s", num_strikes);
     }
 
+    // Function to reset ball and strike count
     function ResetPCount() {
         num_balls = 0;
         num_strikes = 0;
+
+        // Update pitch result for balls and strikes
         pitch_res("b", num_balls);
         pitch_res("s", num_strikes);
     }
 
 
-
+    // Render the baseball game UI
     return (
         <div className="scorekeeper">
             <div className="teams">

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+// gonna
 
+// BasketScorekeeper component for managing basketball scores and time
 const BasketScorekeeper = ({
   U_score,
   Change_Period,
@@ -9,7 +11,10 @@ const BasketScorekeeper = ({
   hcolor,
   vcolor,
 }) => {
+  // State to keep track of the last scored points for undo functionality
   const [LastScore, setLastScore] = useState(0);
+
+  // Styles for home and visiting team colors
   const home_color = {
     backgroundColor: hcolor,
   };
@@ -17,11 +22,13 @@ const BasketScorekeeper = ({
     backgroundColor: vcolor,
   };
 
+  // Function to handle changes in score for a team and update last scored points
   const handleScoreChange = (team, amount) => {
     U_score(team, amount);
     setLastScore(amount * -1);
   };
 
+  // Render the UI for managing scores and time
   return (
     <div className="scorekeeper">
       <div className="teams">
@@ -65,4 +72,4 @@ const BasketScorekeeper = ({
   );
 };
 
-export default BasketScorekeeper;
+export default BasketScorekeeper; // why did we choose react

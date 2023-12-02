@@ -8,6 +8,10 @@ import BaseballController from "./BaseballController";
 import BasketScorekeeper from "./BasketballController";
 import copy from "clipboard-copy";
 
+// you
+
+// Function and Variable Descriptions:
+
 /*
 Vars and Functions in Scorekeeper:
 Vars:
@@ -32,21 +36,27 @@ IncrementTime() - runs the clock counting up (calls count time)
 DecrementTime() - runs the clock counting down (calls count time)
 StopClock() - clears interval to stop the clock
 */
+
 const ScoreController = () => {
+  // State variables to store colors for home and visiting teams
   const [Hcolor, setHcolor] = useState("blue");
   const [Vcolor, setVcolor] = useState("red");
 
   useEffect(() => {
+    // Retrieve stored colors from local storage on component mount
     setHcolor(localStorage.getItem("hcolor"))
     setVcolor(localStorage.getItem("vcolor"))
   }, []);
 
+  // Variables to track scores for home and visiting teams stored in local storage
   let H_score = 0;
   let V_score = 0;
   localStorage.setItem("H_score", H_score);
   localStorage.setItem("V_score", V_score);
 
+  // Function to update scores for home and visiting teams
   function U_score(team, n) {
+    // Increment scores for the selected team and update local storage
     if (team === "h") {
       H_score += n;
       localStorage.setItem("H_score", H_score);
@@ -61,9 +71,7 @@ const ScoreController = () => {
   let Period = 1;
   localStorage.setItem("Period", Period);
 
-  // period has a different value per sport.
-  // Ie bottom/top innings in baseball etc.
-  // takes sting input, not user accessible
+  // Function to change the current period, inning, or quarter
   function Change_Period() {
     Period += 1;
     localStorage.setItem("Period", Period);
@@ -77,6 +85,7 @@ const ScoreController = () => {
   localStorage.setItem("Time", Time);
 
   function SetTime() {
+    // Update and format the game time and store it in local storage
     let mins = Math.floor(T / 60);
     let secs = T % 60;
     if (secs > 9) {
@@ -87,6 +96,7 @@ const ScoreController = () => {
     localStorage.setItem("Time", Time);
   }
 
+  // --- Functions to manage game time (reset, count, increment, decrement, stop) -------------------------------
   function ResetTime(t, d) {
     clearInterval(T_Interval);
     T_Max = t * 60;
@@ -175,12 +185,12 @@ const ScoreController = () => {
     possetion = t;
     localStorage.setItem("Possetion", possetion);
   }
-  // in the following, we will have multiple elements like FBScorekeeper
-  // TODO: create more sports templates and setup conditional rendering
-  // based on user input from dashboard
+  
+  // Logic to determine the type of scorekeeper based on the selected sport from local storage
   const ScoreType = localStorage.getItem("ScoreboardType");
   let ScoreKeeperComponent;
   switch (ScoreType) {
+    // Cases for different sports to render corresponding scorekeeping
     case "Football":
       ScoreKeeperComponent = (
         <FBScorekeeper
@@ -241,12 +251,14 @@ const ScoreController = () => {
       break;
   }
 
+  // Function to copy a link for the scoreboard to the clipboard
   const HandleCpy = () => {
     let textToCopy = "simplescoreboards.com/myscoreboard"
     copy(textToCopy);
     alert(`Link to the scoreboard, ${textToCopy}, is copied to your clipboard. Add it to OBS as a browser source in the sources tab to get started scorekeeping`);
   };
 
+  // Return JSX elements for the ScoreController component
   return (
     <>
       <div>

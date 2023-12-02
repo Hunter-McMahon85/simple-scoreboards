@@ -1,27 +1,33 @@
-// component for use documentation
+// Component for displaying documentation for using Simple Scoreboards
+
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/documentation.css";
+import "../css/documentation.css"; // Importing styling for the documentation component
 
+// Functional component for the documentation
 const documentation = () => {
   return (
     <>
-      <div className="docbody">
+      <div className="docbody"> 
+      {/* Main container for the documentation */}
+      {/* Link to navigate back to the home page */}
         <Link to="/">
           <button className="homeButton">
             Home
           </button>
         </Link>
         <h1>Getting Started:</h1>
-        <div className="doccontent">
+        <div className="doccontent"> {/* Container for the documentation content */}
           <p>
             This guide will get you set up to use simple scoreboards overlays to broadcast your sporting events
           </p>
+          {/* Section detailing the prerequisites */}
           <h2>Pre-Requisites</h2>
           <ul>
             <li>Download and install <a href="https://obsproject.com/download" target="_blank" rel="noopener noreferrer">Open Broadcasting Software (OBS)</a></li>
             <li><Link to="/mydashboard" target="_blank" rel="noopener noreferrer">Create an account</Link> with Simple Scoreboards</li>
           </ul>
+          {/* Section detailing the steps after installing OBS */}
           <h2>Once Open Broadcasting Software Is installed:</h2>
           <ul>
             <li>Open obs</li>
@@ -76,6 +82,7 @@ const documentation = () => {
             <img src="../../../InstructionImg/sourceadd.PNG" alt="docks"></img>
           </div>
           <div className="source_images"></div>
+          {/* ... (steps for starting a session and displaying the scoreboard) ... */}
           <h2>Beggining a Session</h2>
           <ul>
             <li>
@@ -100,4 +107,4 @@ const documentation = () => {
   );
 };
 
-export default documentation;
+export default documentation; // i have to fart so bad right now but i don't want it to smell like farts in my room

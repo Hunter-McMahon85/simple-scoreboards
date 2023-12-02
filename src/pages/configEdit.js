@@ -1,16 +1,25 @@
-// component where users can customize their scoreboards
+/*
+configEdit.js
+Description: React JS file for scoreboard editor page
+
+Creation date: 10/21/23
+Inital Author: Hunter McMahon
+*/
+
+// Import necessary React and UI components
 import React, { useState, useEffect } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";
 import { Link } from "react-router-dom";
 import { Auth } from "aws-amplify";
-import "../css/configEdit.css";
+import "../css/configEdit.css"; // External CSS for styling
 import { Menu, MenuItem, MenuButton } from '@aws-amplify/ui-react';
-// import axios from 'axios';
+// Import scoreboard components for different sports
 import FBSlim from "./scoreboards/FB_Slim";
 import Soccer from "./scoreboards/Soccer";
 import Baseball from "./scoreboards/baseball";
 import Basketball from "./scoreboards/basketball";
 
+// Function for signing out the user
 async function signOut() {
   try {
     await Auth.signOut();
@@ -29,6 +38,7 @@ const getUserId = async () => {
   }
 };
 
+// Component for the scoreboard editor
 const ConfigEditor = () => {
   // Variables for setting and getting the two images, two colors, and sport the user will choose
   const [team1Image, setTeam1Image] = useState(null);
@@ -43,7 +53,8 @@ const ConfigEditor = () => {
   // Used for handling saving and loading templates
   const [selectedSlot, setSelectedSlot] = useState(0);
   // Initializing the scoreboards in local storage
-  // Doing 5 as we have 5 slots on the dashboard
+
+  // Function to initialize templates in local storage 
   const initTemplatesArray = () => {
     if (!localStorage.getItem('templates')) {
       localStorage.setItem('templates', JSON.stringify(Array(5).fill(null)));
@@ -51,7 +62,7 @@ const ConfigEditor = () => {
   };
 
 //====================================UseStates to update various states=================
-  // Call this function when the component mounts using useEffect
+  // useEffect to initialize templates array when component mounts
   React.useEffect(() => {
     initTemplatesArray();
   }, []);
@@ -62,7 +73,11 @@ const ConfigEditor = () => {
   }, [color1, color2, selectedSport]);
 
 //========================================Sport Selection=========================
+// Function to handle selection of different sports and set corresponding scoreboard components
   const handleSportSelection = (sport) => {
+    // Logic to set the appropriate scoreboard component based on the selected sport
+    // Update SBComponent state with the respective scoreboard component
+    // Depending on the selected sport, different scoreboard components are rendered with predefined props
     setSelectedSport(sport);
     switch (sport) {
       case "Football":
@@ -137,24 +152,28 @@ const ConfigEditor = () => {
       default:
         break;
     }
-  };
+  }; // fuck that
 
-  // const handleTemplateSelection = (temp) => {
-  //   setSelectedTemplate(temp);
-  // };
 // ----------------------------------Color Changes---------------------
+  // Function to handle changes in color selection for team 1
   const ColorChange1 = (event) => {
     setColor1(event.target.value);
     handleSportSelection(selectedSport);
   };
 
+  // Function to handle changes in color selection for team 2
   const ColorChange2 = (event) => {
     setColor2(event.target.value);
     handleSportSelection(selectedSport);
   };
+
 //------------------------------------Saving of Template-------------------------
+  // Function to save the current template to local storage or backend
   const saveTemplate = async () => {
-    //databse just takes in color and images
+    // Get templates from local storage
+    // Prepare template data including colors, images, sport, and user ID
+    // Update the selected slot in local storage with the new template data
+    // Optionally, send a POST request to a backend endpoint to save the template
     const templates = JSON.parse(localStorage.getItem('templates'));
     const userId = await getUserId();
     const templateData = {
@@ -180,11 +199,13 @@ const ConfigEditor = () => {
     //   console.error('Error saving template:', error);
     //   alert('Failed to save template.');
     // }
-
   };
 
 //------------------------------Image Uploading and verification------------------
+  // Function to trigger file input click for team image upload
   const handleImageUpload = (event, setImage, teamNum) => {
+    // Simulate click on file input element for team 1 or team 2 image upload
+    // Update selected team image and trigger a re-render of the selected sport component
     const file = event.target.files[0];
     const img = new Image();
     img.onload = () => {
@@ -217,6 +238,9 @@ const ConfigEditor = () => {
   //=======================================LOAD SCOREBOARDS===================================================
   // Slight modification to Hunters function to allow color changes
   const loadTemplate = (slotIndex) => {
+    // Retrieve templates from local storage
+    // Load the selected template data into the editor for modification
+    // Update colors, images, selected sport, and trigger rendering of the selected sport component
     setSelectedSlot(slotIndex);
     const templates = JSON.parse(localStorage.getItem('templates'));
     const templateData = templates[slotIndex];
@@ -238,6 +262,7 @@ const ConfigEditor = () => {
 
   //============================================HTML+REACT=========================
   // Spagehtti Code Incoming
+  // Return JSX elements for the scoreboard editor interface
   return (
 
   //-----------------------------------------------Header + Navbar---------------
