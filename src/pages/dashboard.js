@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   const loadTemplates = () =>
   {
-    
+
   }
   
   const handleopenSessionStart = () => {
@@ -71,7 +71,7 @@ const Dashboard = () => {
 
         <Link to="/presetcreator">
           <button className="PresetCreatorButton" title="Create a new template preset">
-            New Preset
+            New Preset {loadTemplates}
           </button>
         </Link>
 
