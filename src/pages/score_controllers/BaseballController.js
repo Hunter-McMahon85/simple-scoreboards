@@ -2,8 +2,8 @@
 BaseballController.js
 Description:
 host the baseball scorekeeper component; UI interface for controlling/updating the baseball scoreboard
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 11/26/2023
+Initial Author: Hunter McMahon
 */
 import React from "react";
 

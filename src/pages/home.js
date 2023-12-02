@@ -2,8 +2,8 @@
 home.js
 Description:
 this component holds the landing page for our web app
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/19/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import { Link } from "react-router-dom";

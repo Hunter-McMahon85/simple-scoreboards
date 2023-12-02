@@ -3,7 +3,7 @@ Session_config.js
 Description:
 this component host a popup that lets users launch a demo scorekeeping session. 
 this component saves info about a session into local storage and then opens the scorekeeper
-Creation date:
+Creation date: 10/27/2023
 Inital Author: Hunter McMahon
 */
 import React from "react";

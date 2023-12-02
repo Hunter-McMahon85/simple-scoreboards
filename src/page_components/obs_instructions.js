@@ -3,8 +3,8 @@ obs_instruction.js
 Description:
 This component acts as a popup that is displayed in dashboard if it not docked into obs
 This component displays instructions to the user on how to setup our application in obs
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 11/12/2023
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "../css/dashboard.css";

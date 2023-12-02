@@ -2,8 +2,8 @@
 Soccer.js
 Description:
 host the soccer scorekeeper component; UI interface for controlling/updating the soccer scoreboard
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/30/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 // up

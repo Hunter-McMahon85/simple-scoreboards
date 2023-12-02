@@ -2,8 +2,8 @@
 baseball.js
 Description:
 host the baseball scoreboard overlay component
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 11/26/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "./scorecss/baseball.css";

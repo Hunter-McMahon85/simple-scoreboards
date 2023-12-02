@@ -2,8 +2,8 @@
 FB_slim.js
 Description:
 host the football scoreboard overlay component
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/27/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "./scorecss/FB_Slim.css";

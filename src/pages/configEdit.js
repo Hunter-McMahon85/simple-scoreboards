@@ -2,8 +2,8 @@
 configedit.js
 Description:
 this component handles the user editing of scoreboard presets. Behavior relating to modifing and saving user presets is handled here
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/21/23
+Initial Author: Hunter McMahon
 */
 import React, { useState, useEffect } from "react";
 import { Button, View, Card } from "@aws-amplify/ui-react";

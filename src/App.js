@@ -4,8 +4,8 @@ Description:
 react component that is loaded into index.html page in public. 
 This file determines the routing behavior linking other react 
 components to the web apps overall page heirachy 
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/18/23
+Initial Author: Hunter McMahon
 */
 // react imports
 import React from "react";

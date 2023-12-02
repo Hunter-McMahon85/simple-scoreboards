@@ -2,8 +2,8 @@
 Soccer.js
 Description:
 host the soccer scoreboard overlay component
-Creation date:
-Inital Author: Hunter McMahon
+Creation date: 10/30/23
+Initial Author: Hunter McMahon
 */
 import React from "react";
 import "./scorecss/soccer.css";
