@@ -1,5 +1,5 @@
 // holds score controller elements
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 // our different score controllers
 import FBScorekeeper from "./FB_controller";
@@ -33,6 +33,14 @@ DecrementTime() - runs the clock counting down (calls count time)
 StopClock() - clears interval to stop the clock
 */
 const ScoreController = () => {
+  const [Hcolor, setHcolor] = useState("blue");
+  const [Vcolor, setVcolor] = useState("red");
+
+  useEffect(() => {
+    setHcolor(localStorage.getItem("hcolor"))
+    setVcolor(localStorage.getItem("vcolor"))
+  }, []);
+
   let H_score = 0;
   let V_score = 0;
   localStorage.setItem("H_score", H_score);
@@ -183,8 +191,8 @@ const ScoreController = () => {
           StopClock={StopClock}
           DefDistance={DefDistance}
           DefDown={DefDown}
-          hcolor={"blue"}
-          vcolor={"red"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
         />
       );
       break;
@@ -196,8 +204,8 @@ const ScoreController = () => {
           ResetTime={ResetTime}
           IncrementTime={IncrementTime}
           StopClock={StopClock}
-          hcolor={"blue"}
-          vcolor={"red"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
         />
       );
       break;
@@ -210,8 +218,8 @@ const ScoreController = () => {
           pitch_res={pitch_res}
           DefDown={DefDown}
           Change_Pos={Change_Pos}
-          hcolor={"blue"}
-          vcolor={"red"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
         />
       );
       break;
@@ -223,8 +231,8 @@ const ScoreController = () => {
           ResetTime={ResetTime}
           DecrementTime={DecrementTime}
           StopClock={StopClock}
-          hcolor={"blue"}
-          vcolor={"red"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
         />
       );
       break;
