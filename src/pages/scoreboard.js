@@ -17,6 +17,12 @@ const Scoreboard = () => {
   const [Balls, setBalls] = useState(0);
   const [Strikes, setStrikes] = useState(0);
   const [Possetion, setPossetion] = useState("");
+  const [Hcolor, setHcolor] = useState("blue");
+  const [Vcolor, setVcolor] = useState("red");
+  const [Himage, setHimage] = useState("../../../logo192.png");
+  const [Vimage, setVimage] = useState("../../../logo192.png");
+  const [Hname, setHname] = useState("Home Team");
+  const [Vname, setVname] = useState("Visiting Team");
 
   // fetch data from controller
   const reload = () => {
@@ -29,6 +35,13 @@ const Scoreboard = () => {
     setBalls(localStorage.getItem("Balls"));
     setStrikes(localStorage.getItem("Strikes"));
     setPossetion(localStorage.getItem("Possetion"));
+    setHcolor(localStorage.getItem("hcolor"))
+    setVcolor(localStorage.getItem("vcolor"))
+    setHimage(localStorage.getItem("himage")) 
+    setVimage(localStorage.getItem("vimage"))  
+    setHname(localStorage.getItem("hname")) 
+    setVname(localStorage.getItem("vname")) 
+
   };
 
   // repetedly fetch to keep scoreboard updated
@@ -46,7 +59,7 @@ const Scoreboard = () => {
   const ScoreType = localStorage.getItem("ScoreboardType");
   let ScoreboardComponent;
   switch (ScoreType) {
-    case "FBSlim":
+    case "Football":
       ScoreboardComponent = (
         <FBSlim
           H_score={H_score}
@@ -55,12 +68,12 @@ const Scoreboard = () => {
           Time={Time}
           Down={Down}
           Distance={Distance}
-          hcolor={"blue"}
-          vcolor={"red"}
-          himage={"../../../logo192.png"}
-          vimage={"../../../logo192.png"}
-          hname={"home team"}
-          vname={"visiting team"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
+          himage={Himage}
+          vimage={Vimage}
+          hname={Hname}
+          vname={Vname}
         />
       );
       break;
@@ -71,12 +84,12 @@ const Scoreboard = () => {
           V_score={V_score}
           Period={Period}
           Time={Time}
-          hcolor={"blue"}
-          vcolor={"red"}
-          himage={"../../../logo192.png"}
-          vimage={"../../../logo192.png"}
-          hname={"home team"}
-          vname={"visiting team"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
+          himage={Himage}
+          vimage={Vimage}
+          hname={Hname}
+          vname={Vname}
         />
       );
       break;
@@ -90,12 +103,12 @@ const Scoreboard = () => {
           Balls={Balls}
           Strikes={Strikes}
           Possetion={Possetion}
-          hcolor={"blue"}
-          vcolor={"red"}
-          himage={"../../../logo192.png"}
-          vimage={"../../../logo192.png"}
-          hname={"home team"}
-          vname={"visiting team"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
+          himage={Himage}
+          vimage={Vimage}
+          hname={Hname}
+          vname={Vname}
         />
       );
       break;
@@ -106,12 +119,12 @@ const Scoreboard = () => {
           V_score={V_score}
           Period={Period}
           Time={Time}
-          hcolor={"blue"}
-          vcolor={"red"}
-          himage={"../../../logo192.png"}
-          vimage={"../../../logo192.png"}
-          hname={"home team"}
-          vname={"visiting team"}
+          hcolor={Hcolor}
+          vcolor={Vcolor}
+          himage={Himage}
+          vimage={Vimage}
+          hname={Hname}
+          vname={Vname}
         />
       );
       break;
