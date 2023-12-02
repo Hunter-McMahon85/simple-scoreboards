@@ -16,11 +16,7 @@ async function signOut() {
 
 const Dashboard = () => {
   const [ShowSessionStart, setShowSessionStart] = useState(false);
-
-  const loadTemplates = () =>
-  {
-
-  }
+  const templates = JSON.parse(localStorage.getItem('templates'));
   
   const handleopenSessionStart = () => {
     setShowSessionStart(true);
@@ -48,13 +44,13 @@ const Dashboard = () => {
   const Nav = useNavigate();
   const userPreset = undefined;
 
-  const handleClick = (arg1, arg2) => {
+  const handleClick = (t) => {
     if (userPreset === undefined) {
 
       Nav('/presetcreator');
+      console.log(templates[t])
       return;
     }
-    console.log(arg1, arg2)
     Nav('/myscorekeeper');
   };
 
@@ -71,7 +67,7 @@ const Dashboard = () => {
 
         <Link to="/presetcreator">
           <button className="PresetCreatorButton" title="Create a new template preset">
-            New Preset {loadTemplates}
+            New Preset 
           </button>
         </Link>
 
@@ -85,15 +81,15 @@ const Dashboard = () => {
 
           {/* add source for image within the buttons */}
           <div className="preButcontain">
-            <button className="PresetTile" onClick={() => handleClick()}>1 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick(0)}>1 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick()}>2 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick(1)}>2 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick()}>3 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick(2)}>3 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick()}>4 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick(3)}>4 sport <br/> team1 vs. team2</button>
 
-            <button className="PresetTile" onClick={() => handleClick()}>5 sport <br/> team1 vs. team2</button>
+            <button className="PresetTile" onClick={() => handleClick(4)}>5 sport <br/> team1 vs. team2</button>
           </div>
         </div>
       </div>
