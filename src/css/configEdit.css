@@ -29,17 +29,17 @@ h1 {
 }
 
 .ButtonSave {
-  margin-left: center;
-  background-color: #00b6bc;
-  color: white;
-  font-size: 1.2rem;
+  margin: 5px;
+  background-color: lightgreen;
+  outline: 2px solid #41d941;
+  color: black;
   padding: 8px 20px;
   border: none;
   border-radius: 20px;
 }
 
 .ButtonSave:hover {
-  background-color: #0c6170;
+  background-color: #41d941;
 }
 
 .ButtonContainer {
@@ -51,32 +51,36 @@ h1 {
   z-index: 10; 
 }
 
-.homeButton {
-  background-color: #00b6bc;
+.toDashboardButton {
   color: white;
+  background-color: #466b99;
+  border: 2px solid #1F2B3F;
   font-size: 1.2rem;
   padding: 10px 20px;
-  border: none;
   border-radius: 20px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
-.homeButton:hover {
-  background-color: #0c6170;
+.toDashboardButton:hover {
+  background-color: #1F2B3F;
 }
 
 .signout {
-  margin-left: 10px;
-  background-color: #00b6bc;
-  color: white;
+  color: black;
+  background-color: lightcoral;
+  border: 2px solid #e64040;
   font-size: 1.2rem;
   padding: 10px 20px;
-  border: none;
   border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .signout:hover {
-  background-color: #0c6170;
+  background-color: #e64040;
 }
+
 .Sidebar {
   display: flex;
   align-items: center;
@@ -99,10 +103,17 @@ h1 {
 
 .customMenuButton {
   max-width: 200px;
-  margin-right: 1%;
+  margin: 5px;
   flex-grow: 2;
   display: flex;
   gap: 10px;
+  border-radius: 20px;
+  background-color: #466b99;
+  border: 2px solid #1F2B3F;
+}
+
+.customMenuButton:hover {
+  background-color: #1F2B3F;
 }
 
 .file-input-container {
@@ -111,6 +122,10 @@ h1 {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.fileUploads {
+  margin: 5px;
 }
 
 /* Helps keep the scoreboard in view */

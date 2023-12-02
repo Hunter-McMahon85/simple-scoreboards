@@ -255,7 +255,7 @@ const ConfigEditor = () => {
 
         <div className="ButtonContainer">
           <Link to="/mydashboard">
-            <Button className="homeButton">Home</Button>
+            <Button className="toDashboardButton">Home</Button>
           </Link>
           <Button className="signout" onClick={signOut}>Sign Out</Button>
         </div>
