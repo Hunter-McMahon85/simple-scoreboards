@@ -273,7 +273,7 @@ const ConfigEditor = () => {
           <input
             id="team2ImageInput"
             type="file"
-            style={{ display: "none", marginLeft:"5px" }}
+            style={{ display: "none" }}
             onChange={(e) => handleImageUpload(e, setTeam2Image, 2)}
           />
           <button className="fileUploads" onClick={() => handleFileUploadClick(2)}>
