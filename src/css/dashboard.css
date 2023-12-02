@@ -24,7 +24,7 @@
 .PresetTile {
   color: black;
   background-color: #f3ffff;
-  border: 4px solid #b0bbbb;
+  border: 4px solid #c0cccc;
   border-radius: 15px;
   width: 320px;
   height: 180px;
@@ -33,7 +33,7 @@
 }
 
 .PresetTile:hover {
-  background-color: #a0aaaa;
+  background-color: #c0cccc;
 }
 
 .dash_body h1 {
