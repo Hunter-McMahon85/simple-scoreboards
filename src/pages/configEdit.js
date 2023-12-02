@@ -260,7 +260,7 @@ const ConfigEditor = () => {
           <input className="colorPicker" type="color" value={color2} onChange={ColorChange2} />
 
           {/*--------------------------------------------Button press to upload the user image for the teams---------------------------------*/}
-          <input
+         <input
             id="team1ImageInput"
             type="file"
             style={{ display: "none" }}
@@ -269,7 +269,6 @@ const ConfigEditor = () => {
           <button className="fileUploads" onClick={() => handleFileUploadClick(1)}>
             {team1Image ? team1Image.name : "Upload File"}
           </button>
-
 
           <input
             id="team2ImageInput"
@@ -281,6 +280,7 @@ const ConfigEditor = () => {
             {team2Image ? team2Image.name : "Upload File"}
           </button>
  
+
           {/* Button to select sports */}
           <Menu
             trigger={
