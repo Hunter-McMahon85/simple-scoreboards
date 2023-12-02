@@ -10,7 +10,7 @@ import landing from "./pages/home";
 import configEditor from "./pages/configEdit";
 import scorekeeper from "./pages/scorekeeper";
 import scoreboard from "./pages/scoreboard";
-import setupguide from "./pages/instruction";
+
 import documentation from "./pages/documentation";
 
 function App() {
@@ -18,7 +18,6 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" Component={landing}></Route>
-        <Route exact path="/learntobroadcast" Component={setupguide}></Route>
         <Route
           exact
           path="/usingsimplescoreboards"
