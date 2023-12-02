@@ -7,7 +7,6 @@ Initial Author: Hunter McMahon
 */
 import React, { useState } from "react";
 
-
 // FBScorekeeper component for managing football scores and game details
 // Props Explanation:
 // - U_score: Function to update the score of the teams (home or visitors)

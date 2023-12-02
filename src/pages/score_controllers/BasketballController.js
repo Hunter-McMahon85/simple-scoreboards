@@ -6,7 +6,6 @@ Creation date: 12/01/23
 Initial Author: Hunter McMahon
 */
 import React, { useState } from "react";
-// gonna
 
 // BasketScorekeeper component for managing basketball scores and time
 const BasketScorekeeper = ({

@@ -6,7 +6,6 @@ Creation date: 10/30/23
 Initial Author: Hunter McMahon
 */
 import React from "react";
-// up
 
 // The following component, SoccerScorekeeper, is a React component responsible for managing soccer game scores and time.
 
